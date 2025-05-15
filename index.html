@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izumi- Python Developer</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#00F0FF',secondary:'#39FF14'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        @keyframes matrix-rain {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(0, 240, 255, 0.7), 0 0 10px rgba(0, 240, 255, 0.5); }
+            50% { text-shadow: 0 0 10px rgba(0, 240, 255, 0.9), 0 0 20px rgba(0, 240, 255, 0.7), 0 0 30px rgba(0, 240, 255, 0.5); }
+            100% { text-shadow: 0 0 5px rgba(0, 240, 255, 0.7), 0 0 10px rgba(0, 240, 255, 0.5); }
+        }
+        
+        @keyframes green-glow {
+            0% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.7), 0 0 10px rgba(57, 255, 20, 0.5); }
+            50% { text-shadow: 0 0 10px rgba(57, 255, 20, 0.9), 0 0 20px rgba(57, 255, 20, 0.7), 0 0 30px rgba(57, 255, 20, 0.5); }
+            100% { text-shadow: 0 0 5px rgba(57, 255, 20, 0.7), 0 0 10px rgba(57, 255, 20, 0.5); }
+        }
+        
+        @keyframes border-glow {
+            0% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.7), 0 0 10px rgba(0, 240, 255, 0.5); }
+            50% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.9), 0 0 20px rgba(0, 240, 255, 0.7); }
+            100% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.7), 0 0 10px rgba(0, 240, 255, 0.5); }
+        }
+        
+        @keyframes green-border-glow {
+            0% { box-shadow: 0 0 5px rgba(57, 255, 20, 0.7), 0 0 10px rgba(57, 255, 20, 0.5); }
+            50% { box-shadow: 0 0 10px rgba(57, 255, 20, 0.9), 0 0 20px rgba(57, 255, 20, 0.7); }
+            100% { box-shadow: 0 0 5px rgba(57, 255, 20, 0.7), 0 0 10px rgba(57, 255, 20, 0.5); }
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        body {
+            font-family: 'Source Code Pro', monospace;
+            background-color: #0A0A0A;
+            color: #ffffff;
+        }
+        
+        .matrix-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=dark%20cyberpunk%20digital%20matrix%20code%20rain%20background%20with%20binary%20numbers%20flowing%20down%2C%20high%20contrast%2C%20deep%20black%20background%20with%20bright%20blue%20and%20green%20digital%20code%2C%20tech%20aesthetic%2C%20abstract%20pattern%2C%20no%20people%20or%20objects%2C%20purely%20digital%20pattern&width=1920&height=1080&seq=1&orientation=landscape');
+            background-size: cover;
+            animation: matrix-rain 20s linear infinite;
+        }
+        
+        .cyber-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .cyber-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .cyber-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cyber-btn:hover::before {
+            left: 100%;
+        }
+        
+        .neon-text {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        .green-neon-text {
+            animation: green-glow 2s ease-in-out infinite;
+        }
+        
+        .neon-border {
+            animation: border-glow 2s ease-in-out infinite;
+        }
+        
+        .green-neon-border {
+            animation: green-border-glow 2s ease-in-out infinite;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #00F0FF;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink 0.75s step-end infinite;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .rotating {
+            animation: rotate 10s linear infinite;
+        }
+        
+        .hexagon {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #00F0FF;
+            border-radius: 3px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #39FF14;
+        }
+        
+        .terminal-input {
+            background-color: rgba(10, 10, 10, 0.8);
+            border: 1px solid #00F0FF;
+            color: #ffffff;
+            font-family: 'Source Code Pro', monospace;
+        }
+        
+        .terminal-input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+        }
+        
+        .circuit-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=digital%20circuit%20board%20pattern%2C%20dark%20cyberpunk%20style%2C%20tech%20aesthetic%2C%20printed%20circuit%20board%20traces%20in%20neon%20blue%20and%20green%20on%20black%20background%2C%20high%20contrast%2C%20detailed%20electronic%20pathways%2C%20futuristic%20tech%20design%2C%20no%20people%20or%20objects&width=1920&height=400&seq=2&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .glitch-hover:hover {
+            animation: glitch 0.3s linear;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #00F0FF;
+            background-color: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #00F0FF;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            width: 6px;
+            height: 12px;
+            border: solid #0A0A0A;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        .switch-input {
+            display: none;
+        }
+        
+        .switch-label {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            background-color: #0A0A0A;
+            border: 1px solid #333;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .switch-label::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #555;
+            transition: all 0.3s;
+        }
+        
+        .switch-input:checked + .switch-label {
+            background-color: rgba(0, 240, 255, 0.2);
+            border-color: #00F0FF;
+        }
+        
+        .switch-input:checked + .switch-label::after {
+            transform: translateX(26px);
+            background-color: #00F0FF;
+        }
+        
+        .range-input {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 4px;
+            background: #333;
+            outline: none;
+            border-radius: 2px;
+        }
+        
+        .range-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #00F0FF;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+    <!-- Header Section with Matrix Background -->
+    <header class="relative h-screen flex items-center justify-center matrix-bg overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        
+        <!-- Floating Geometric Shapes -->
+        <div class="absolute w-32 h-32 border border-primary opacity-30 rotating" style="top: 20%; left: 15%; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+        <div class="absolute w-24 h-24 border border-secondary opacity-20 rotating" style="top: 60%; left: 80%; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; animation-duration: 15s;"></div>
+        <div class="absolute w-40 h-40 border border-primary opacity-25 rotating" style="top: 75%; left: 25%; border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; animation-duration: 20s;"></div>
+        
+        <div class="container mx-auto px-4 z-10 text-center">
+            <div class="mb-4 inline-block">
+                <div class="w-16 h-16 flex items-center justify-center text-primary text-4xl mb-4 mx-auto">
+                    <i class="ri-python-fill"></i>
+                </div>
+            </div>
+            <h1 class="typewriter text-5xl md:text-7xl font-bold mb-4 neon-text inline-block">IZUMI HOLLOW</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300">Python Developer | Cybersecurity Specialist | AI Engineer</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#projects" class="cyber-btn bg-transparent border border-primary text-primary hover:bg-primary hover:bg-opacity-10 px-6 py-3 text-lg font-medium !rounded-button whitespace-nowrap">View Projects</a>
+                <a href="#contact" class="cyber-btn bg-primary bg-opacity-10 border border-primary text-primary hover:bg-opacity-20 px-6 py-3 text-lg font-medium !rounded-button whitespace-nowrap">Contact Me</a>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="absolute top-0 left-0 w-full py-4 px-6 flex justify-between items-center z-20">
+            <div class="text-primary text-2xl font-['Pacifico']">
+                <span class="neon-text">Izumi</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-primary transition-colors duration-300 glitch-hover">Home</a>
+                <a href="#projects" class="text-white hover:text-primary transition-colors duration-300 glitch-hover">Projects</a>
+                <a href="#skills" class="text-white hover:text-primary transition-colors duration-300 glitch-hover">Skills</a>
+                <a href="#contact" class="text-white hover:text-primary transition-colors duration-300 glitch-hover">Contact</a>
+            </div>
+            <div class="md:hidden w-8 h-8 flex items-center justify-center text-white cursor-pointer">
+                <i class="ri-menu-line text-xl"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20 bg-[#0F0F0F]">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 neon-text">$ whoami</h2>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-6 rounded terminal-text">
+                        <p class="mb-4 text-gray-300"><span class="text-primary">></span> A cybersecurity-focused Python developer with 7+ years of experience in building secure applications, penetration testing tools, and AI-driven security solutions.</p>
+                        <p class="mb-4 text-gray-300"><span class="text-primary">></span> Specialized in network security, cryptography, and machine learning for threat detection.</p>
+                        <p class="text-gray-300"><span class="text-primary">></span> Currently working on open-source security tools and researching advanced persistent threats.</p>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="bg-[#0A0A0A] border border-gray-800 px-4 py-2 rounded flex items-center gap-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-code-s-slash-line"></i>
+                            </div>
+                            <span>Python</span>
+                        </div>
+                        <div class="bg-[#0A0A0A] border border-gray-800 px-4 py-2 rounded flex items-center gap-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-shield-keyhole-line"></i>
+                            </div>
+                            <span>Cybersecurity</span>
+                        </div>
+                        <div class="bg-[#0A0A0A] border border-gray-800 px-4 py-2 rounded flex items-center gap-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-robot-line"></i>
+                            </div>
+                            <span>AI/ML</span>
+                        </div>
+                        <div class="bg-[#0A0A0A] border border-gray-800 px-4 py-2 rounded flex items-center gap-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-database-2-line"></i>
+                            </div>
+                            <span>Data Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="w-full h-80 md:h-96 rounded-lg overflow-hidden neon-border" style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%20cyberpunk%20hacker%20workspace%20with%20multiple%20holographic%20screens%20displaying%20code%2C%20dark%20room%20with%20blue%20and%20green%20neon%20lighting%2C%20high-tech%20equipment%2C%20cybersecurity%20themed%2C%20professional%20setup%20with%20Python%20code%20visible%20on%20screens%2C%20no%20person%20visible&width=600&height=600&seq=3&orientation=squarish'); background-size: cover; background-position: center;"></div>
+                    <div class="absolute -bottom-4 -right-4 bg-[#0A0A0A] border border-primary p-3 rounded rotating" style="animation-duration: 30s;">
+                        <div class="w-12 h-12 flex items-center justify-center text-primary text-3xl">
+                            <i class="ri-terminal-box-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-[#0A0A0A]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center neon-text">Technical Arsenal</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Programming Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Programming Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Python</span>
+                                <span class="text-primary">95%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary neon-border" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Django</span>
+                                <span class="text-primary">88%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary neon-border" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Flask</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary neon-border" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">TensorFlow/PyTorch</span>
+                                <span class="text-primary">85%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary neon-border" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">SQL/NoSQL</span>
+                                <span class="text-primary">82%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary neon-border" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security Skills -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Security Expertise</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Penetration Testing</span>
+                                <span class="text-secondary">92%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary green-neon-border" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Network Security</span>
+                                <span class="text-secondary">90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary green-neon-border" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Cryptography</span>
+                                <span class="text-secondary">85%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary green-neon-border" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Malware Analysis</span>
+                                <span class="text-secondary">80%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary green-neon-border" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Threat Intelligence</span>
+                                <span class="text-secondary">88%</span>
+                            </div>
+                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-secondary green-neon-border" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technologies & Tools -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-white text-center">Technologies & Tools</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-terminal-box-fill"></i>
+                        </div>
+                        <p class="text-sm">Bash/Shell</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-database-2-fill"></i>
+                        </div>
+                        <p class="text-sm">PostgreSQL</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-server-fill"></i>
+                        </div>
+                        <p class="text-sm">Docker</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-cloud-fill"></i>
+                        </div>
+                        <p class="text-sm">AWS</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-git-branch-fill"></i>
+                        </div>
+                        <p class="text-sm">Git</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-linux-fill"></i>
+                        </div>
+                        <p class="text-sm">Linux</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-flask-fill"></i>
+                        </div>
+                        <p class="text-sm">Flask</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-django-fill"></i>
+                        </div>
+                        <p class="text-sm">Django</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-brain-fill"></i>
+                        </div>
+                        <p class="text-sm">TensorFlow</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-fire-fill"></i>
+                        </div>
+                        <p class="text-sm">PyTorch</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-shield-keyhole-fill"></i>
+                        </div>
+                        <p class="text-sm">Kali Linux</p>
+                    </div>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-4 rounded-lg text-center hover:border-primary transition-colors duration-300">
+                        <div class="w-12 h-12 mx-auto flex items-center justify-center text-primary text-3xl mb-2">
+                            <i class="ri-bug-fill"></i>
+                        </div>
+                        <p class="text-sm">Metasploit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills Chart -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-white text-center">Skill Distribution</h3>
+                <div id="skillsChart" class="w-full h-80"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[#0F0F0F]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center neon-text">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-[#0A0A0A] border border-gray-800 rounded-lg overflow-hidden hover:border-primary transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://readdy.ai/api/search-image?query=cybersecurity%20dashboard%20interface%20with%20network%20monitoring%2C%20dark%20theme%20with%20blue%20and%20green%20data%20visualization%2C%20futuristic%20UI%20design%2C%20digital%20security%20metrics%20displayed%20on%20screen%2C%20high-tech%20monitoring%20system%2C%20no%20people&width=600&height=400&seq=4&orientation=landscape" alt="CyberSentry" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">CyberSentry</h3>
+                            <p class="text-sm text-gray-300">Network Security Monitoring</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">An advanced network security monitoring tool built with Python that uses machine learning to detect anomalies and potential threats in real-time.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">TensorFlow</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Flask</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Scapy</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-github-fill"></i>
+                                </div>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="#" class="text-primary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-[#0A0A0A] border border-gray-800 rounded-lg overflow-hidden hover:border-secondary transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://readdy.ai/api/search-image?query=cryptographic%20encryption%20visualization%2C%20digital%20lock%20with%20binary%20code%20flowing%20through%2C%20cyberpunk%20style%20with%20green%20neon%20glow%2C%20secure%20data%20transfer%20concept%2C%20futuristic%20encryption%20technology%2C%20dark%20background%20with%20matrix-like%20elements&width=600&height=400&seq=5&orientation=landscape" alt="QuantumCrypt" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">QuantumCrypt</h3>
+                            <p class="text-sm text-gray-300">Quantum-Resistant Encryption</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">A Python library implementing post-quantum cryptographic algorithms to provide encryption methods resistant to quantum computing attacks.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Cryptography</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">NumPy</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">C++</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-secondary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-github-fill"></i>
+                                </div>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="#" class="text-secondary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-book-2-line"></i>
+                                </div>
+                                <span>Documentation</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-[#0A0A0A] border border-gray-800 rounded-lg overflow-hidden hover:border-primary transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://readdy.ai/api/search-image?query=AI-powered%20threat%20detection%20system%20interface%2C%20cybersecurity%20dashboard%20with%20malware%20analysis%20visualization%2C%20dark%20futuristic%20UI%20with%20blue%20and%20red%20alert%20indicators%2C%20digital%20threat%20mapping%2C%20high-tech%20security%20monitoring%20display&width=600&height=400&seq=6&orientation=landscape" alt="NexusGuard" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">NexusGuard</h3>
+                            <p class="text-sm text-gray-300">AI-Powered Threat Detection</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">An intelligent threat detection system that uses deep learning to identify and classify malware, zero-day exploits, and advanced persistent threats.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">PyTorch</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Django</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Redis</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-github-fill"></i>
+                                </div>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="#" class="text-primary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="bg-[#0A0A0A] border border-gray-800 rounded-lg overflow-hidden hover:border-secondary transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://readdy.ai/api/search-image?query=automated%20penetration%20testing%20tool%20interface%2C%20vulnerability%20scanner%20dashboard%2C%20cyberpunk%20hacker%20tool%20with%20terminal%20and%20code%20display%2C%20dark%20theme%20with%20green%20text%20on%20black%20background%2C%20network%20vulnerability%20mapping%20visualization&width=600&height=400&seq=7&orientation=landscape" alt="ShadowScanner" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">ShadowScanner</h3>
+                            <p class="text-sm text-gray-300">Automated Penetration Testing</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">An automated penetration testing framework that identifies vulnerabilities in web applications, networks, and infrastructure using intelligent scanning techniques.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Selenium</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Nmap</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">SQLAlchemy</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-secondary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-github-fill"></i>
+                                </div>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="#" class="text-secondary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-book-2-line"></i>
+                                </div>
+                                <span>Documentation</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="bg-[#0A0A0A] border border-gray-800 rounded-lg overflow-hidden hover:border-primary transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://readdy.ai/api/search-image?query=blockchain%20security%20analysis%20tool%2C%20digital%20ledger%20visualization%20with%20cryptographic%20elements%2C%20cyberpunk%20style%20interface%20showing%20blockchain%20transactions%20and%20security%20verification%2C%20futuristic%20UI%20with%20blue%20grid%20lines&width=600&height=400&seq=8&orientation=landscape" alt="BlockShield" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">BlockShield</h3>
+                            <p class="text-sm text-gray-300">Blockchain Security Analysis</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">A comprehensive blockchain security analysis tool that audits smart contracts, identifies vulnerabilities, and provides security recommendations for blockchain applications.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Solidity</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Web3.py</span>
+                            <span class="text-xs bg-primary bg-opacity-10 text-primary px-2 py-1 rounded">Flask</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-github-fill"></i>
+                                </div>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="#" class="text-primary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="bg-[#0A0A0A] border border-gray-800 rounded-lg overflow-hidden hover:border-secondary transition-all duration-300 group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://readdy.ai/api/search-image?query=secure%20messaging%20app%20interface%20with%20encryption%20visualization%2C%20cyberpunk%20style%20chat%20application%20with%20privacy%20features%20highlighted%2C%20dark%20UI%20with%20green%20encryption%20indicators%2C%20digital%20communication%20security%20concept&width=600&height=400&seq=9&orientation=landscape" alt="CipherChat" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-70"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold text-white">CipherChat</h3>
+                            <p class="text-sm text-gray-300">Secure Messaging Platform</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">An end-to-end encrypted messaging platform with zero-knowledge architecture, perfect forward secrecy, and self-destructing messages for maximum privacy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Python</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Django</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">WebSockets</span>
+                            <span class="text-xs bg-secondary bg-opacity-10 text-secondary px-2 py-1 rounded">Signal Protocol</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-secondary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-github-fill"></i>
+                                </div>
+                                <span>Source Code</span>
+                            </a>
+                            <a href="#" class="text-secondary flex items-center gap-1 hover:text-white transition-colors">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                                <span>Live Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="cyber-btn inline-block bg-transparent border border-primary text-primary hover:bg-primary hover:bg-opacity-10 px-8 py-3 text-lg font-medium !rounded-button whitespace-nowrap">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-[#0A0A0A]">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 text-primary neon-text">10+</div>
+                    <p class="text-gray-400">Projects Completed</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 text-primary neon-text">18K+</div>
+                    <p class="text-gray-400">Lines of Code</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 text-primary neon-text">9+</div>
+                    <p class="text-gray-400">GitHub Stars</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 text-primary neon-text">2+</div>
+                    <p class="text-gray-400">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#0F0F0F]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center neon-text">Establish Connection</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Contact Information</h3>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-6 rounded-lg mb-8">
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary text-xl bg-primary bg-opacity-10 rounded-full">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Email</h4>
+                                <p class="text-gray-400">izumitempest.hollow@proton.me</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary text-xl bg-primary bg-opacity-10 rounded-full">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Location</h4>
+                                <p class="text-gray-400">Lagos, Nigeria</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary text-xl bg-primary bg-opacity-10 rounded-full">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Working Hours</h4>
+                                <p class="text-gray-400">Mon - Fri: 9:00 AM - 6:00 PM PST</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-6 text-white">Connect</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-white bg-[#0A0A0A] border border-gray-800 rounded-full hover:border-primary hover:text-primary transition-colors">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-white bg-[#0A0A0A] border border-gray-800 rounded-full hover:border-primary hover:text-primary transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-white bg-[#0A0A0A] border border-gray-800 rounded-full hover:border-primary hover:text-primary transition-colors">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center text-white bg-[#0A0A0A] border border-gray-800 rounded-full hover:border-primary hover:text-primary transition-colors">
+                            <i class="ri-discord-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-white">Send Message</h3>
+                    <div class="bg-[#0A0A0A] border border-gray-800 p-6 rounded-lg">
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-400 mb-2">Name</label>
+                                <input type="text" id="name" class="terminal-input w-full px-4 py-3 rounded border-none" placeholder="_">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-400 mb-2">Email</label>
+                                <input type="email" id="email" class="terminal-input w-full px-4 py-3 rounded border-none" placeholder="_">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-400 mb-2">Subject</label>
+                                <input type="text" id="subject" class="terminal-input w-full px-4 py-3 rounded border-none" placeholder="_">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-400 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="terminal-input w-full px-4 py-3 rounded border-none resize-none" placeholder="_"></textarea>
+                            </div>
+                            <div class="flex items-center mb-6">
+                                <input type="checkbox" id="consent" class="custom-checkbox">
+                                <label for="consent" class="ml-2 text-gray-400 text-sm">I consent to having this website store my submitted information</label>
+                            </div>
+                            <button type="submit" class="cyber-btn w-full bg-primary bg-opacity-10 border border-primary text-primary hover:bg-opacity-20 py-3 text-lg font-medium !rounded-button whitespace-nowrap">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 circuit-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="text-primary text-2xl font-['Pacifico'] mb-4 md:mb-0">
+                    <span class="neon-text">Neo</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">Home</a>
+                    <a href="#projects" class="text-gray-400 hover:text-primary transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-400 hover:text-primary transition-colors">Skills</a>
+                    <a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">Blog</a>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 mb-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Alex Cipher. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Skills Chart
+            const skillsChart = echarts.init(document.getElementById('skillsChart'));
+            
+            const option = {
+                animation: false,
+                tooltip: {
+                    trigger: 'item',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    top: 'bottom',
+                    textStyle: {
+                        color: '#ffffff'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Skills',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 10,
+                            borderColor: '#0A0A0A',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '18',
+                                fontWeight: 'bold',
+                                color: '#ffffff'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 35, name: 'Python Development', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                            { value: 25, name: 'Cybersecurity', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+                            { value: 20, name: 'Machine Learning', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+                            { value: 20, name: 'Network Security', itemStyle: { color: 'rgba(252, 141, 98, 1)' } }
+                        ]
+                    }
+                ]
+            };
+            
+            skillsChart.setOption(option);
+            
+            // Resize chart when window size changes
+            window.addEventListener('resize', function() {
+                skillsChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>
