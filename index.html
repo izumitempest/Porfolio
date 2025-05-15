@@ -1180,10 +1180,10 @@
 
             emailjs.sendForm('service_ih7jwlu', 'template_vhh8mfy', this)
                 .then(function (response) {
-                    alert('Yuno: Mission accomplished, senpai 💌 Message sent to your Gmail!');
+                    alert('Message Sent');
                     document.getElementById('contact-form').reset();
                 }, function (error) {
-                    alert('Yuno: Error while sending 😭 ' + JSON.stringify(error));
+                    alert('Error while sending.' + JSON.stringify(error));
                 });
         });
     </script>
