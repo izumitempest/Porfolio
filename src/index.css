@@ -10,13 +10,13 @@ html {
   --font-sans: var(--font-primary-sans);
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-bg: var(--theme-bg);
-  --color-text: var(--theme-text);
-  --color-accent: var(--theme-accent);
-  --color-border: var(--theme-border);
-  --color-border-hover: var(--theme-border-hover);
-  --color-card: var(--theme-card);
-  --color-card-hover: var(--theme-card-hover);
+  --color-site-bg: var(--theme-bg);
+  --color-site-text: var(--theme-text);
+  --color-site-accent: var(--theme-accent);
+  --color-site-border: var(--theme-border);
+  --color-site-border-hover: var(--theme-border-hover);
+  --color-site-card: var(--theme-card);
+  --color-site-card-hover: var(--theme-card-hover);
 }
 
 :root {

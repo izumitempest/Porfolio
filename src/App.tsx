@@ -1222,7 +1222,7 @@ export default function App() {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen bg-bg text-text font-sans selection:bg-accent selection:text-bg overflow-hidden transition-colors duration-700 ease-in-out"
+      className="relative min-h-screen bg-site-bg text-site-text font-sans selection:bg-site-accent selection:text-site-bg overflow-hidden transition-colors duration-700 ease-in-out"
     >
       <div className="noise-overlay"></div>
 
@@ -1362,7 +1362,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 bg-bg/95 backdrop-blur-xl border-b border-border/50 transition-all duration-700 ease-in-out shadow-sm text-text">
+      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 bg-site-bg/95 backdrop-blur-xl border-b border-site-border/50 transition-all duration-700 ease-in-out shadow-sm text-site-text">
         <div className="text-sm tracking-[0.2em] uppercase font-light">
           Izumi
         </div>
@@ -1411,7 +1411,7 @@ export default function App() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-4 w-72 bg-bg/95 backdrop-blur-xl border border-border p-4 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-4 text-text"
+                    className="absolute top-full right-0 mt-4 w-72 bg-site-bg/95 backdrop-blur-xl border border-site-border p-4 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-4 text-site-text"
                   >
                     <div className="flex justify-between items-center border-b border-border pb-2">
                       <span className="text-xs tracking-[0.2em] uppercase text-accent">
@@ -1521,7 +1521,7 @@ export default function App() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-4 w-40 bg-bg/95 backdrop-blur-xl border border-border p-2 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-1 text-text"
+                    className="absolute top-full right-0 mt-4 w-40 bg-site-bg/95 backdrop-blur-xl border border-site-border p-2 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-1 text-site-text"
                   >
                     {(["default", "light", "minimalist", "neon"] as const).map(
                       (t) => (
@@ -1590,7 +1590,7 @@ export default function App() {
             <p className="font-serif italic text-accent text-xl md:text-3xl mb-6 transition-all duration-700 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               Precision Python Engineering
             </p>
-            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
+            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-site-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
               Izumi
             </h1>
             <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-12 md:ml-32 hover:text-accent transition-all duration-700 cursor-default">
@@ -1605,7 +1605,7 @@ export default function App() {
             className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-3 gap-12"
           >
             <div className="col-span-1 md:col-start-3">
-              <p className="text-sm leading-relaxed font-light tracking-wide text-text/80 transition-colors duration-700">
+              <p className="text-sm leading-relaxed font-light tracking-wide text-site-text/80 transition-colors duration-700">
                 Elevating code to an art form. Specializing in high-performance
                 Python systems, data architecture, and algorithmic elegance for
                 discerning clients worldwide.
@@ -1624,7 +1624,7 @@ export default function App() {
       </section>
 
       {/* The Journey & The Ritual */}
-      <section className="py-32 px-6 md:px-12 relative z-10 bg-bg transition-colors duration-500 overflow-hidden">
+      <section className="py-32 px-6 md:px-12 relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         {/* Parallax Background Elements */}
         <motion.div
           style={{ y: isA11yMode ? 0 : parallax1 }}
@@ -1688,11 +1688,11 @@ export default function App() {
               02 / The Ritual
             </h2>
             <div
-              className="border border-border p-8 md:p-12 relative bg-card transition-colors duration-500"
+              className="border border-site-border p-8 md:p-12 relative bg-site-card transition-colors duration-500"
               data-cursor="hover"
               onMouseEnter={handleHover}
             >
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-site-accent to-transparent opacity-50"></div>
               <h4 className="font-serif text-2xl mb-6 text-accent transition-colors duration-500">
                 The White Room
               </h4>
@@ -1702,7 +1702,7 @@ export default function App() {
                 using only ink and parchment. I believe that if an architecture
                 cannot be elegantly drawn, it cannot be elegantly coded.
               </p>
-              <pre className="font-mono text-[10px] md:text-xs leading-loose tracking-widest text-accent/80 mb-8 p-4 bg-bg/50 border border-border rounded">
+              <pre className="font-mono text-[10px] md:text-xs leading-loose tracking-widest text-site-accent/80 mb-8 p-4 bg-site-bg/50 border border-site-border rounded">
                 <code className="block">def architect_reality(vision):</code>
                 <code className="block"> # Distill complexity</code>
                 <code className="block opacity-50"> # Vault Access: 0x1A4</code>
@@ -1718,7 +1718,7 @@ export default function App() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-6 md:px-12 bg-card-hover border-y border-border relative z-10 transition-colors duration-500">
+      <section className="py-24 px-6 md:px-12 bg-site-card-hover border-y border-site-border relative z-10 transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center mb-16">
             <Quote
@@ -1754,7 +1754,7 @@ export default function App() {
       </section>
 
       {/* The Elements (Skills) */}
-      <section className="py-32 md:py-48 px-6 md:px-12 relative z-10 bg-bg transition-colors duration-500 overflow-hidden">
+      <section className="py-32 md:py-48 px-6 md:px-12 relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         {/* Parallax Background Elements */}
         <motion.div
           style={{ y: isA11yMode ? 0 : parallax3 }}
@@ -1787,7 +1787,7 @@ export default function App() {
                 whileHover="hover"
                 viewport={{ once: true, margin: "-50px" }}
                 onMouseEnter={handleHover}
-                className="relative h-[400px] border border-border p-8 flex flex-col justify-between group overflow-hidden transition-colors duration-500"
+                className="relative h-[400px] border border-site-border p-8 flex flex-col justify-between group overflow-hidden transition-colors duration-500"
                 data-cursor="hover"
               >
                 <motion.div
@@ -1889,7 +1889,7 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="border border-border p-8 bg-card rounded-xl transition-colors duration-500"
+              className="border border-site-border p-8 bg-site-card rounded-xl transition-colors duration-500"
             >
               <h4 className="text-xs tracking-[0.2em] uppercase mb-8 opacity-70">
                 Latency Optimization (μs)
@@ -1967,7 +1967,7 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="border border-border p-8 bg-card rounded-xl transition-colors duration-500"
+              className="border border-site-border p-8 bg-site-card rounded-xl transition-colors duration-500"
             >
               <h4 className="text-xs tracking-[0.2em] uppercase mb-8 opacity-70">
                 Model Accuracy (%)
@@ -2030,7 +2030,7 @@ export default function App() {
       </section>
 
       {/* The Laboratory (Code Showcase) */}
-      <section className="py-32 md:py-48 px-6 md:px-12 border-t border-border relative z-10 bg-bg transition-colors duration-500 overflow-hidden">
+      <section className="py-32 md:py-48 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
             <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
@@ -2066,8 +2066,8 @@ export default function App() {
               ))}
             </div>
 
-            <div className="lg:col-span-8 border border-border bg-card rounded-lg overflow-hidden flex flex-col">
-              <div className="flex justify-between items-center p-4 border-b border-border bg-bg/50">
+            <div className="lg:col-span-8 border border-site-border bg-site-card rounded-lg overflow-hidden flex flex-col">
+              <div className="flex justify-between items-center p-4 border-b border-site-border bg-site-bg/50">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-border"></div>
                   <div className="w-3 h-3 rounded-full bg-border"></div>
@@ -2212,7 +2212,7 @@ export default function App() {
                           </div>
 
                           {/* SVG Architecture Draw-Down */}
-                          <div className="lg:col-span-5 h-64 border border-border bg-card rounded-lg p-6 relative overflow-hidden flex items-center justify-center">
+                          <div className="lg:col-span-5 h-64 border border-site-border bg-site-card rounded-lg p-6 relative overflow-hidden flex items-center justify-center">
                             <div className="absolute top-4 left-4 text-[10px] tracking-[0.2em] uppercase text-accent opacity-50">
                               Architecture Topology
                             </div>
@@ -2247,8 +2247,8 @@ export default function App() {
             </h3>
           </div>
 
-          <div className="border border-border p-8 md:p-16 bg-card rounded-xl relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-30"></div>
+          <div className="border border-site-border p-8 md:p-16 bg-site-card rounded-xl relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-site-accent to-transparent opacity-30"></div>
 
             {isVaultUnlocked ? (
               <motion.div
@@ -2273,11 +2273,11 @@ export default function App() {
                   <a
                     href="/resume.pdf"
                     target="_blank"
-                    className="flex items-center gap-4 p-5 border border-border hover:border-accent bg-bg/50 transition-all rounded-lg group"
+                    className="flex items-center gap-4 p-5 border border-site-border hover:border-site-accent bg-site-bg/50 transition-all rounded-lg group"
                     onMouseEnter={handleHover}
                     onClick={handleClick}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center bg-accent/10 rounded group-hover:bg-accent group-hover:text-bg transition-colors">
+                    <div className="w-10 h-10 flex items-center justify-center bg-site-accent/10 rounded group-hover:bg-site-accent group-hover:text-site-bg transition-colors">
                       <ArrowUpRight size={18} />
                     </div>
                     <div className="text-left">
@@ -2292,11 +2292,11 @@ export default function App() {
 
                   <a
                     href="mailto:izumi@example.com"
-                    className="flex items-center gap-4 p-5 border border-border hover:border-accent bg-bg/50 transition-all rounded-lg group"
+                    className="flex items-center gap-4 p-5 border border-site-border hover:border-site-accent bg-site-bg/50 transition-all rounded-lg group"
                     onMouseEnter={handleHover}
                     onClick={handleClick}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center bg-accent/10 rounded group-hover:bg-accent group-hover:text-bg transition-colors">
+                    <div className="w-10 h-10 flex items-center justify-center bg-site-accent/10 rounded group-hover:bg-site-accent group-hover:text-site-bg transition-colors">
                       <Mail size={18} />
                     </div>
                     <div className="text-left">
@@ -2336,7 +2336,7 @@ export default function App() {
                         placeholder="ENTER HASH"
                         value={vaultInput}
                         onChange={(e) => setVaultInput(e.target.value)}
-                        className={`w-full bg-bg border ${vaultError ? "border-red-500" : "border-border focus:border-accent"} outline-none p-4 text-center tracking-[0.5em] font-mono text-xs rounded transition-all uppercase`}
+                        className={`w-full bg-site-bg border ${vaultError ? "border-red-500" : "border-site-border focus:border-site-accent"} outline-none p-4 text-center tracking-[0.5em] font-mono text-xs rounded transition-all uppercase`}
                       />
                       {vaultError && (
                         <motion.div
@@ -2393,8 +2393,8 @@ export default function App() {
                 CONSULTATION
               </span>
               {/* Glowing Underline Effect */}
-              <span className="absolute -bottom-4 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
-              <span className="absolute -bottom-4 left-0 w-full h-[2px] bg-accent blur-md scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left ease-[cubic-bezier(0.16,1,0.3,1)] opacity-50"></span>
+              <span className="absolute -bottom-4 left-0 w-full h-[2px] bg-site-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
+              <span className="absolute -bottom-4 left-0 w-full h-[2px] bg-site-accent blur-md scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left ease-[cubic-bezier(0.16,1,0.3,1)] opacity-50"></span>
             </h3>
           </button>
 
@@ -2465,9 +2465,9 @@ export default function App() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-2xl bg-card border border-border rounded-xl shadow-2xl overflow-hidden relative"
+              className="w-full max-w-2xl bg-site-card border border-site-border rounded-xl shadow-2xl overflow-hidden relative"
             >
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-site-accent to-transparent opacity-50"></div>
 
               <div className="p-8 md:p-12">
                 <div className="flex justify-between items-start mb-12">
@@ -2498,9 +2498,9 @@ export default function App() {
                     setIsConsultationOpen(false);
                   }}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-site-text">
                     <div className="space-y-2">
-                      <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block">
+                      <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block text-site-text">
                         Identity
                       </label>
                       <input
@@ -2511,7 +2511,7 @@ export default function App() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block">
+                      <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block text-site-text">
                         Secure Contact
                       </label>
                       <input
@@ -2527,17 +2527,29 @@ export default function App() {
                     <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block">
                       Nature of Inquiry
                     </label>
-                    <select className="w-full bg-transparent border-b border-border focus:border-accent outline-none py-2 text-sm transition-colors duration-300 appearance-none">
-                      <option value="architecture" className="bg-bg text-text">
+                    <select className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300 appearance-none">
+                      <option
+                        value="architecture"
+                        className="bg-site-bg text-site-text"
+                      >
                         System Architecture
                       </option>
-                      <option value="optimization" className="bg-bg text-text">
+                      <option
+                        value="optimization"
+                        className="bg-site-bg text-site-text"
+                      >
                         Performance Optimization
                       </option>
-                      <option value="consulting" className="bg-bg text-text">
+                      <option
+                        value="consulting"
+                        className="bg-site-bg text-site-text"
+                      >
                         Technical Consulting
                       </option>
-                      <option value="other" className="bg-bg text-text">
+                      <option
+                        value="other"
+                        className="bg-site-bg text-site-text"
+                      >
                         Other Inquiry
                       </option>
                     </select>
@@ -2558,9 +2570,9 @@ export default function App() {
                   <div className="pt-4 flex justify-end">
                     <button
                       type="submit"
-                      className="group inline-flex items-center gap-4 border border-border-hover rounded-full px-8 py-4 hover:border-accent hover:bg-accent hover:text-bg transition-all duration-500 relative overflow-hidden"
+                      className="group inline-flex items-center gap-4 border border-site-border-hover rounded-full px-8 py-4 hover:border-site-accent hover:bg-site-accent hover:text-site-bg transition-all duration-500 relative overflow-hidden"
                     >
-                      <span className="absolute inset-0 bg-accent opacity-0 group-hover:animate-pulse transition-opacity duration-300"></span>
+                      <span className="absolute inset-0 bg-site-accent opacity-0 group-hover:animate-pulse transition-opacity duration-300"></span>
                       <span className="text-xs tracking-[0.2em] uppercase relative z-10">
                         Transmit Request
                       </span>
