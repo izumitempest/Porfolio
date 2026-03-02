@@ -1462,20 +1462,20 @@ export default function App() {
                       ))}
                     </div>
 
-                    <div className="flex flex-col gap-2 pt-2 border-t border-border">
+                    <div className="flex flex-col gap-2 pt-2 border-t border-site-border">
                       <input
                         type="text"
                         placeholder="Track Name"
                         value={newTrackName}
                         onChange={(e) => setNewTrackName(e.target.value)}
-                        className="bg-transparent border border-border rounded px-2 py-1 text-xs focus:outline-none focus:border-accent text-text"
+                        className="bg-transparent border border-site-border rounded px-2 py-1 text-xs focus:outline-none focus:border-site-accent text-site-text"
                       />
                       <input
                         type="text"
                         placeholder="Audio URL (.mp3, .ogg)"
                         value={newTrackUrl}
                         onChange={(e) => setNewTrackUrl(e.target.value)}
-                        className="bg-transparent border border-border rounded px-2 py-1 text-xs focus:outline-none focus:border-accent text-text"
+                        className="bg-transparent border border-site-border rounded px-2 py-1 text-xs focus:outline-none focus:border-site-accent text-site-text"
                       />
                       <button
                         onClick={() => {
@@ -1492,7 +1492,7 @@ export default function App() {
                             setNewTrackUrl("");
                           }
                         }}
-                        className="bg-accent/10 hover:bg-accent/20 text-accent border border-accent/20 rounded px-2 py-1 text-xs transition-colors flex items-center justify-center gap-2"
+                        className="bg-site-accent/10 hover:bg-site-accent/20 text-site-accent border border-site-accent/20 rounded px-2 py-1 text-xs transition-colors flex items-center justify-center gap-2"
                       >
                         <Plus size={12} /> Add Track
                       </button>
