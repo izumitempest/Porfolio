@@ -2078,20 +2078,20 @@ export default function App() {
                   disabled={isSimulating}
                   onMouseEnter={handleHover}
                   data-cursor="hover"
-                  className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-accent hover:text-text transition-colors duration-300 disabled:opacity-50"
+                  className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-site-accent hover:text-site-text transition-colors duration-300 disabled:opacity-50"
                 >
                   <Play size={12} />{" "}
                   {isSimulating ? "Executing..." : "Run Sequence"}
                 </button>
               </div>
 
-              <div className="p-6 font-mono text-xs md:text-sm leading-relaxed overflow-x-auto text-text/80">
+              <div className="p-6 font-mono text-xs md:text-sm leading-relaxed overflow-x-auto text-site-text/80">
                 <pre>
                   <code>{codeSnippets[activeSnippet].code}</code>
                 </pre>
               </div>
 
-              <div className="mt-auto border-t border-border bg-bg/80 p-6 min-h-[120px] font-mono text-xs text-accent">
+              <div className="mt-auto border-t border-site-border bg-site-bg/80 p-6 min-h-[120px] font-mono text-xs text-site-accent">
                 <div className="opacity-50 mb-2 text-[10px] tracking-widest uppercase">
                   Output Console
                 </div>
@@ -2127,13 +2127,13 @@ export default function App() {
             </p>
           </div>
 
-          <div className="flex flex-col border-t border-border transition-colors duration-500">
+          <div className="flex flex-col border-t border-site-border transition-colors duration-500">
             {projects.map((project, index) => {
               const isExpanded = expandedProject === index;
               return (
                 <motion.div
                   key={project.id}
-                  className="border-b border-border transition-colors duration-500"
+                  className="border-b border-site-border transition-colors duration-500"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -2162,7 +2162,7 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="w-12 h-12 rounded-full border border-border-hover flex items-center justify-center group-hover:border-accent group-hover:text-accent transition-all duration-500 shrink-0">
+                    <div className="w-12 h-12 rounded-full border border-site-border-hover flex items-center justify-center group-hover:border-site-accent group-hover:text-site-accent transition-all duration-500 shrink-0">
                       {isExpanded ? (
                         <Minus size={16} strokeWidth={1} />
                       ) : (
@@ -2184,7 +2184,7 @@ export default function App() {
                           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div>
                               <h4 className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 flex items-center gap-2 transition-colors duration-500">
-                                <span className="w-4 h-[1px] bg-accent transition-colors duration-500"></span>{" "}
+                                <span className="w-4 h-[1px] bg-site-accent transition-colors duration-500"></span>{" "}
                                 The Problem
                               </h4>
                               <p className="text-sm font-light leading-relaxed opacity-70">
@@ -2193,7 +2193,7 @@ export default function App() {
                             </div>
                             <div>
                               <h4 className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 flex items-center gap-2 transition-colors duration-500">
-                                <span className="w-4 h-[1px] bg-accent transition-colors duration-500"></span>{" "}
+                                <span className="w-4 h-[1px] bg-site-accent transition-colors duration-500"></span>{" "}
                                 The Solution
                               </h4>
                               <p className="text-sm font-light leading-relaxed opacity-70">
@@ -2202,7 +2202,7 @@ export default function App() {
                             </div>
                             <div className="md:col-span-2">
                               <h4 className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 flex items-center gap-2 transition-colors duration-500">
-                                <span className="w-4 h-[1px] bg-accent transition-colors duration-500"></span>{" "}
+                                <span className="w-4 h-[1px] bg-site-accent transition-colors duration-500"></span>{" "}
                                 Contribution
                               </h4>
                               <p className="text-sm font-light leading-relaxed opacity-70">
@@ -2229,10 +2229,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* The Vault Section */}
       <section
         id="vault"
-        className="py-32 md:py-48 px-6 md:px-12 border-t border-border relative z-10 bg-bg transition-colors duration-500"
+        className="py-32 md:py-48 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500"
       >
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-16">
@@ -2310,7 +2309,7 @@ export default function App() {
                   </a>
                 </div>
 
-                <div className="pt-8 border-t border-border mt-8">
+                <div className="pt-8 border-t border-site-border mt-8">
                   <p className="text-[10px] font-mono italic opacity-30 text-center uppercase tracking-widest">
                     "The most elegant systems are those that disappear into the
                     purpose they serve."
@@ -2319,7 +2318,7 @@ export default function App() {
               </motion.div>
             ) : (
               <div className="space-y-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 border border-border rounded-full opacity-50 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 border border-site-border rounded-full opacity-50 mb-4">
                   <Lock size={24} />
                 </div>
                 <div className="space-y-4">
@@ -2350,7 +2349,7 @@ export default function App() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-4 border border-border hover:border-accent hover:bg-accent hover:text-bg transition-all duration-500 uppercase tracking-widest text-[10px] font-medium"
+                      className="w-full py-4 border border-site-border hover:border-site-accent hover:bg-site-accent hover:text-site-bg transition-all duration-500 uppercase tracking-widest text-[10px] font-medium"
                       onMouseEnter={handleHover}
                     >
                       Authenticate
@@ -2371,7 +2370,7 @@ export default function App() {
       {/* Contact / Footer */}
       <section
         id="contact"
-        className="py-32 md:py-48 px-6 md:px-12 border-t border-border relative overflow-hidden z-10 bg-bg transition-colors duration-500"
+        className="py-32 md:py-48 px-6 md:px-12 border-t border-site-border relative overflow-hidden z-10 bg-site-bg transition-colors duration-500"
       >
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-12 transition-colors duration-500">
