@@ -2410,9 +2410,9 @@ export default function App() {
               }}
               data-cursor="hover"
               onMouseEnter={handleHover}
-              className="group inline-flex items-center gap-4 border border-border-hover rounded-full px-8 py-4 hover:border-accent hover:bg-accent hover:text-bg transition-all duration-500 relative overflow-hidden"
+              className="group inline-flex items-center gap-4 border border-site-border-hover rounded-full px-8 py-4 hover:border-site-accent hover:bg-site-accent hover:text-site-bg transition-all duration-500 relative overflow-hidden"
             >
-              <span className="absolute inset-0 bg-accent opacity-0 group-hover:animate-pulse transition-opacity duration-300"></span>
+              <span className="absolute inset-0 bg-site-accent opacity-0 group-hover:animate-pulse transition-opacity duration-300"></span>
               <span className="text-xs tracking-[0.2em] uppercase relative z-10">
                 Secure Message
               </span>
@@ -2562,7 +2562,7 @@ export default function App() {
                     <textarea
                       required
                       rows={4}
-                      className="w-full bg-transparent border-b border-border focus:border-accent outline-none py-2 text-sm transition-colors duration-300 resize-none"
+                      className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300 resize-none"
                       placeholder="Briefly describe the scope and objectives..."
                     ></textarea>
                   </div>
