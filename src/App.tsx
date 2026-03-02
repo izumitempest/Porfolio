@@ -1709,7 +1709,7 @@ export default function App() {
                 <code className="block"> return Model.synthesize(vision)</code>
               </pre>
               <div className="flex items-center gap-4 text-[10px] tracking-[0.2em] uppercase text-accent transition-colors duration-500">
-                <span className="w-8 h-[1px] bg-accent transition-colors duration-500"></span>
+                <span className="w-8 h-[1px] bg-site-accent transition-colors duration-500"></span>
                 Concept Before Syntax
               </div>
             </div>
@@ -1798,7 +1798,7 @@ export default function App() {
                 >
                   <el.Visual />
                 </motion.div>
-                <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
+                <div className="absolute inset-0 bg-site-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
 
                 <div className="relative z-10">
                   <span className="font-serif italic text-accent text-3xl transition-colors duration-500">
@@ -1824,7 +1824,7 @@ export default function App() {
       </section>
 
       {/* The Stack */}
-      <section className="py-32 px-6 md:px-12 border-t border-border relative z-10 bg-bg transition-colors duration-500 overflow-hidden">
+      <section className="py-32 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
             <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
@@ -1848,7 +1848,7 @@ export default function App() {
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 className="flex flex-col gap-6"
               >
-                <h4 className="text-xs tracking-[0.2em] uppercase text-accent border-b border-border pb-4 transition-colors duration-500">
+                <h4 className="text-xs tracking-[0.2em] uppercase text-site-accent border-b border-site-border pb-4 transition-colors duration-500">
                   {stack.category}
                 </h4>
                 <ul className="space-y-4">
@@ -1857,7 +1857,7 @@ export default function App() {
                       key={j}
                       className="text-sm font-light tracking-wide opacity-80 flex items-center gap-3"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent/50"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-site-accent/50"></span>
                       {item}
                     </li>
                   ))}
@@ -1869,7 +1869,7 @@ export default function App() {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-32 px-6 md:px-12 border-t border-border relative z-10 bg-bg transition-colors duration-500 overflow-hidden">
+      <section className="py-32 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
             <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
@@ -2056,7 +2056,7 @@ export default function App() {
                   }}
                   onMouseEnter={handleHover}
                   data-cursor="hover"
-                  className={`text-left p-6 border transition-all duration-500 ${activeSnippet === index ? "border-accent bg-accent/5" : "border-border hover:border-border-hover"}`}
+                  className={`text-left p-6 border transition-all duration-500 ${activeSnippet === index ? "border-site-accent bg-site-accent/5" : "border-site-border hover:border-site-border-hover"}`}
                 >
                   <h4 className="font-serif text-xl mb-2">{snippet.title}</h4>
                   <p className="text-[10px] tracking-[0.2em] uppercase opacity-50">
@@ -2107,7 +2107,7 @@ export default function App() {
       {/* Selected Works */}
       <section
         id="work"
-        className="py-32 md:py-48 px-6 md:px-12 border-t border-border relative z-10 bg-bg transition-colors duration-500"
+        className="py-32 md:py-48 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500"
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-24">
