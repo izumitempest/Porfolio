@@ -1222,7 +1222,7 @@ export default function App() {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen bg-bg text-text font-sans selection:bg-accent selection:text-bg overflow-hidden transition-colors duration-500"
+      className="relative min-h-screen bg-bg text-text font-sans selection:bg-accent selection:text-bg overflow-hidden transition-colors duration-700 ease-in-out"
     >
       <div className="noise-overlay"></div>
 
@@ -1362,7 +1362,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 bg-bg/95 backdrop-blur-xl border-b border-border/50 transition-all duration-500 shadow-sm">
+      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 bg-bg/95 backdrop-blur-xl border-b border-border/50 transition-all duration-700 ease-in-out shadow-sm text-text">
         <div className="text-sm tracking-[0.2em] uppercase font-light">
           Izumi
         </div>
@@ -1587,7 +1587,7 @@ export default function App() {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col"
           >
-            <p className="font-serif italic text-accent text-xl md:text-3xl mb-6 transition-colors duration-500">
+            <p className="font-serif italic text-accent text-xl md:text-3xl mb-6 transition-all duration-700 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               Precision Python Engineering
             </p>
             <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
@@ -1605,7 +1605,7 @@ export default function App() {
             className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-3 gap-12"
           >
             <div className="col-span-1 md:col-start-3">
-              <p className="text-sm leading-relaxed font-light tracking-wide opacity-80">
+              <p className="text-sm leading-relaxed font-light tracking-wide text-text/80 transition-colors duration-700">
                 Elevating code to an art form. Specializing in high-performance
                 Python systems, data architecture, and algorithmic elegance for
                 discerning clients worldwide.
