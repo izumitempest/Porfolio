@@ -1362,7 +1362,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-40 bg-bg/90 backdrop-blur-md border-b border-border transition-colors duration-500">
+      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 bg-bg/95 backdrop-blur-xl border-b border-border/50 transition-all duration-500 shadow-sm">
         <div className="text-sm tracking-[0.2em] uppercase font-light">
           Izumi
         </div>
@@ -1411,7 +1411,7 @@ export default function App() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-4 w-72 bg-bg/90 backdrop-blur-md border border-border p-4 rounded-lg shadow-2xl z-50 flex flex-col gap-4 text-text"
+                    className="absolute top-full right-0 mt-4 w-72 bg-bg/95 backdrop-blur-xl border border-border p-4 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-4 text-text"
                   >
                     <div className="flex justify-between items-center border-b border-border pb-2">
                       <span className="text-xs tracking-[0.2em] uppercase text-accent">
@@ -1521,7 +1521,7 @@ export default function App() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-4 w-40 bg-bg/90 backdrop-blur-md border border-border p-2 rounded-lg shadow-2xl z-50 flex flex-col gap-1 text-text"
+                    className="absolute top-full right-0 mt-4 w-40 bg-bg/95 backdrop-blur-xl border border-border p-2 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-1 text-text"
                   >
                     {(["default", "light", "minimalist", "neon"] as const).map(
                       (t) => (
@@ -1590,10 +1590,10 @@ export default function App() {
             <p className="font-serif italic text-accent text-xl md:text-3xl mb-6 transition-colors duration-500">
               Precision Python Engineering
             </p>
-            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light">
+            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
               Izumi
             </h1>
-            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-12 md:ml-32">
+            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-12 md:ml-32 hover:text-accent transition-all duration-700 cursor-default">
               Architect
             </h1>
           </motion.div>
