@@ -542,51 +542,6 @@ const ChronosSVG = () => (
   </svg>
 );
 
-const projects = [
-  {
-    id: "01",
-    title: "SYNDICATE",
-    category: "Algorithmic Trading Engine",
-    github: "https://github.com/Izumitempest/syndicate-trading-engine",
-    year: "2025",
-    problem:
-      "A premier quantitative hedge fund faced critical slippage in high-frequency arbitrage strategies. Their legacy Python infrastructure suffered from unpredictable microsecond latency spikes during volatile market events.",
-    solution:
-      "Architected a hybrid execution engine using C++ extensions for Python, utilizing zero-copy memory mapping and lock-free ring buffers to handle nanosecond communication.",
-    contribution:
-      "Lead Architect. Eradicated GIL contention in the critical path, reducing P99 latency by 94% and increasing successful arbitrage captures by 41% in Q1.",
-    Diagram: SyndicateSVG,
-  },
-  {
-    id: "02",
-    title: "AURA",
-    category: "Predictive Analytics Suite",
-    github: "https://github.com/Izumitempest/aura-analytics",
-    year: "2024",
-    problem:
-      "A global luxury conglomerate struggled with inventory bloat and missed seasonal trends due to reliance on static historical sales data.",
-    solution:
-      "Developed an expansive predictive suite using PyTorch and FastAPI, ingesting real-time social sentiment and macroeconomic signals into a novel attention-based neural network.",
-    contribution:
-      "ML Pipeline Lead. Increased forecast accuracy by 32%, reducing unsold seasonal inventory by 15% across European flagship boutiques.",
-    Diagram: AuraSVG,
-  },
-  {
-    id: "03",
-    title: "NEXUS",
-    category: "Distributed Data Mesh",
-    github: "https://github.com/Izumitempest/nexus-data-mesh",
-    year: "2024",
-    problem:
-      "A multinational bank was paralyzed by 40+ disparate legacy databases, making real-time risk assessment and unified compliance reporting impossible.",
-    solution:
-      "Engineered a decentralized data mesh using Python, Apache Kafka, and Kubernetes, providing intelligent nodes for real-time normalization and streaming.",
-    contribution:
-      "System Architect. Unified the institution's global data landscape, enabling sub-second, cross-border risk aggregation and saving 12,000 manual hours annually.",
-    Diagram: NexusSVG,
-  },
-];
-
 const IgnisSVG = () => (
   <svg
     viewBox="0 0 100 100"
@@ -614,6 +569,93 @@ const IgnisSVG = () => (
     <circle cx="50" cy="50" r="4" className="fill-accent" />
   </svg>
 );
+
+const projects = [
+  {
+    id: "01",
+    title: "CyberSentry",
+    category: "Network Security Monitoring",
+    github: "https://github.com/Izumitempest/cybersentry",
+    year: "2025",
+    problem:
+      "Modern network environments face increasingly sophisticated zero-day threats that bypass traditional signature-based detection systems, leading to silent data exfiltration.",
+    solution:
+      "Architected an advanced monitoring engine using Python and Scapy, integrating a real-time TensorFlow anomaly detection model to identify suspicious traffic patterns with high precision.",
+    contribution:
+      "Lead Developer. Successfully implemented a multi-threaded packet processing pipeline that reduced detection latency to sub-10ms, identifying 40% more threats than legacy systems.",
+    Diagram: SyndicateSVG,
+  },
+  {
+    id: "02",
+    title: "QuantumCrypt",
+    category: "Quantum-Resistant Encryption",
+    github: "https://github.com/Izumitempest/quantumcrypt",
+    year: "2024",
+    problem:
+      "The looming reality of quantum computing threatens current RSA and ECC encryption standards, potentially exposing decades of encrypted sensitive data to decryption.",
+    solution:
+      "Engineered a post-quantum cryptographic library in Python, utilizing NumPy and C++ extensions to implement lattice-based and code-based encryption algorithms resistant to Shor's algorithm.",
+    contribution:
+      "Security Architect. Optimized the performance of NTRU and Kyber implementations, achieving a 3x speedup over standard Python libraries while maintaining absolute cryptographic integrity.",
+    Diagram: AuraSVG,
+  },
+  {
+    id: "03",
+    title: "NexusGuard",
+    category: "AI-Powered Threat Detection",
+    github: "https://github.com/Izumitempest/nexusguard",
+    year: "2024",
+    problem:
+      "Security teams are overwhelmed by thousands of false-positive alerts daily, making it nearly impossible to prioritize and react to genuine security breaches in massive data environments.",
+    solution:
+      "Developed a deep learning threat classifier using PyTorch and Django, processing millions of logs through a Redis-backed real-time analysis pipeline to provide prioritized threat scoring.",
+    contribution:
+      "ML Engineer. Achieved a 98.4% accuracy rate in malware classification, reducing false-positive alerts by 65% and significantly decreasing incident response times for the SOC team.",
+    Diagram: NexusSVG,
+  },
+  {
+    id: "04",
+    title: "ShadowScanner",
+    category: "Automated Penetration Testing",
+    github: "https://github.com/Izumitempest/shadowscanner",
+    year: "2024",
+    problem:
+      "Manual penetration testing is slow and inconsistent, often leaving critical security gaps open for weeks between scheduled audits in fast-moving dev environments.",
+    solution:
+      "Engineered an automated offensive security framework using Python and Selenium, orchestrating Nmap and custom fuzzing scripts to perform continuous vulnerability mapping.",
+    contribution:
+      "Core Architect. Refined the orchestration logic to reduce scanning overhead by 50% while expanding coverage across a wide range of web and network-level vulnerabilities.",
+    Diagram: IgnisSVG,
+  },
+  {
+    id: "05",
+    title: "BlockShield",
+    category: "Blockchain Security Analysis",
+    github: "https://github.com/Izumitempest/blockshield",
+    year: "2023",
+    problem:
+      "Smart contract vulnerabilities lead to billions of dollars in lost crypto assets annually, with traditional static analysis tools often missing complex logic-based exploits.",
+    solution:
+      "Created a comprehensive security audit suite for Web3 using Web3.py and Solidity, capable of identifying reentrancy, overflow, and access control issues through symbolic execution.",
+    contribution:
+      "Lead Auditor. Developed a proprietary rule engine that helped secure over $200M in digital assets by identifying critical flaws in major DeFi protocol smart contracts.",
+    Diagram: AuraSVG,
+  },
+  {
+    id: "06",
+    title: "CipherChat",
+    category: "Secure Messaging Platform",
+    github: "https://github.com/Izumitempest/cipherchat",
+    year: "2023",
+    problem:
+      "Common communication platforms often lack true zero-knowledge architecture, leaving user metadata and message content vulnerable to institutional access or data breaches.",
+    solution:
+      "Architected an end-to-end encrypted messaging system using Django and WebSockets, implementing the Signal Protocol for perfect forward secrecy and self-destructing data packets.",
+    contribution:
+      "System Architect. Designed the core cryptographic exchange protocol, ensuring minimal latency while maintaining the highest level of privacy and data sovereignty for users.",
+    Diagram: SyndicateSVG,
+  },
+];
 
 const TerraSVG = () => (
   <svg
@@ -863,10 +905,20 @@ export default function App() {
   // Theme & Sound Logic
   const [theme, setTheme] = useState<
     "default" | "light" | "minimalist" | "neon"
-  >("default");
+  >(() => (localStorage.getItem("portfolio-theme") as any) || "default");
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
-  const [isA11yMode, setIsA11yMode] = useState(false);
+  const [isA11yMode, setIsA11yMode] = useState(
+    () => localStorage.getItem("portfolio-a11y") === "true",
+  );
   const [isSoundEnabled, setIsSoundEnabled] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem("portfolio-a11y", String(isA11yMode));
+  }, [isA11yMode]);
 
   // Playlist State
   const [playlist, setPlaylist] = useState(defaultPlaylist);
@@ -1005,29 +1057,44 @@ export default function App() {
       const id = cmd.split(" ")[1];
       const project = projects.find((p) => p.id === id);
       if (project) {
-        response = `${project.title} (${project.year}): ${project.category}. ${project.problem.substring(0, 100)}...`;
+        response = `${project.title} (${project.year}): ${project.category}. Problem: ${project.problem.substring(0, 80)}...`;
       } else {
-        response = `Project ID ${id} not found.`;
+        response = `Project ID ${id} not found. Use 'ls' to see valid IDs.`;
+      }
+    } else if (cmd.startsWith("theme ")) {
+      const newTheme = cmd.split(" ")[1];
+      const validThemes = ["default", "light", "minimalist", "neon"];
+      if (validThemes.includes(newTheme)) {
+        setTheme(newTheme as any);
+        response = `Theme changed to ${newTheme}.`;
+      } else {
+        response = `Invalid theme. Try: ${validThemes.join(", ")}`;
       }
     } else {
       switch (cmd) {
         case "help":
           response =
-            "Available commands: whoami, clear, unlock vault, ls, cat [id], socials, sudo, exit";
+            "Available commands: whoami, clear, unlock vault, ls, cat [id], themes, theme [name], socials, sudo, exit";
           break;
         case "ls":
           response =
-            'Projects: 01 (Syndicate), 02 (Aura), 03 (Nexus). Type "cat [id]" for details.';
+            projects.map((p) => `${p.id} (${p.title})`).join(", ") +
+            ". Type 'cat [id]' for details.";
+          break;
+        case "themes":
+          response =
+            "Available themes: default, light, minimalist, neon. Use 'theme [name]' to switch.";
           break;
         case "socials":
-          response = "GitHub: github.com/Izumitempest";
+          response =
+            "GitHub: github.com/Izumitempest | LinkedIn: linkedin.com/in/izumitempest";
           break;
         case "sudo":
           response =
             "Nice try. This incident will be reported to... actually, I am the only root here.";
           break;
         case "whoami":
-          response = "Izumi - Architect of Digital Elegance.";
+          response = "Izumi - System Designer & Cybersecurity Architect.";
           break;
         case "unlock vault":
           if (isVaultUnlocked) {
@@ -1587,25 +1654,26 @@ export default function App() {
             </h3>
             <div className="space-y-6 text-sm font-light leading-relaxed opacity-80">
               <p>
-                My journey into software engineering was not born from a desire
-                to simply build, but from an obsession with how things are
-                built. I view Python not just as a language, but as an
-                instrument of precision—a medium through which complex logic is
-                distilled into elegant, timeless architecture.
+                My path as a system designer was forged at the intersection of
+                pure logic and defensive strategy. With over 4 years of
+                deep-level Python engineering, I view code not just as a set of
+                instructions, but as a resilient architecture that must survive
+                the most hostile digital environments.
               </p>
               <p>
-                Over the years, I have cultivated a philosophy that prioritizes
-                craftsmanship over convenience. From the high-stakes
-                environments of algorithmic trading to the bespoke digital
-                experiences of luxury brands, my work is defined by an
-                uncompromising dedication to performance, security, and
-                aesthetic purity.
+                Specializing in high-performance cybersecurity tools and
+                AI-driven threat detection, I have cultivated a philosophy that
+                prioritizes structural integrity over convenience. My work
+                ranges from engineering quantum-resistant encryption libraries
+                to developing complex neural networks for real-time malware
+                classification.
               </p>
               <p>
-                I believe that true luxury in software lies in its invisibility.
-                The most sophisticated systems are those that operate with
-                silent efficiency, demanding nothing of the user while
-                delivering absolute perfection.
+                I believe that true security in software lies in its
+                transparency of purpose and opacity to exploit. The most
+                sophisticated systems are those that operate with silent,
+                unyielding efficiency while maintaining absolute data
+                sovereignty for their users.
               </p>
             </div>
           </motion.div>
