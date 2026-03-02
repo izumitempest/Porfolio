@@ -1437,7 +1437,7 @@ export default function App() {
                       {playlist.map((track, index) => (
                         <div
                           key={track.id}
-                          className={`group flex justify-between items-center p-2 rounded text-xs transition-colors ${currentTrackIndex === index ? "bg-accent/10 text-accent" : "hover:bg-accent/5"}`}
+                          className={`group flex justify-between items-center p-2 rounded text-xs transition-colors ${currentTrackIndex === index ? "bg-site-accent/10 text-site-accent" : "hover:bg-site-accent/5"}`}
                         >
                           <button
                             className="truncate flex-1 text-left"
@@ -1532,7 +1532,7 @@ export default function App() {
                             setTheme(t);
                             setIsThemeMenuOpen(false);
                           }}
-                          className={`text-left px-3 py-2 rounded text-xs transition-colors ${theme === t ? "bg-accent/10 text-accent" : "hover:bg-accent/5"}`}
+                          className={`text-left px-3 py-2 rounded text-xs transition-colors ${theme === t ? "bg-site-accent/10 text-site-accent" : "hover:bg-site-accent/5"}`}
                         >
                           {t.charAt(0).toUpperCase() + t.slice(1)}
                         </button>
