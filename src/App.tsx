@@ -2430,9 +2430,9 @@ export default function App() {
               data-cursor="hover"
               onMouseEnter={handleHover}
               onClick={handleClick}
-              className="group inline-flex items-center gap-4 border border-border-hover rounded-full px-8 py-4 hover:border-accent hover:bg-accent hover:text-bg transition-all duration-500 relative overflow-hidden"
+              className="group inline-flex items-center gap-4 border border-site-border-hover rounded-full px-8 py-4 hover:border-site-accent hover:bg-site-accent hover:text-site-bg transition-all duration-500 relative overflow-hidden"
             >
-              <span className="absolute inset-0 bg-accent opacity-0 group-hover:animate-pulse transition-opacity duration-300"></span>
+              <span className="absolute inset-0 bg-site-accent opacity-0 group-hover:animate-pulse transition-opacity duration-300"></span>
               <span className="text-xs tracking-[0.2em] uppercase relative z-10">
                 GitHub
               </span>
@@ -2445,7 +2445,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full p-6 flex justify-between items-end text-[10px] tracking-[0.2em] uppercase opacity-40">
+        <div className="absolute bottom-0 left-0 w-full p-6 flex justify-between items-end text-[10px] tracking-[0.2em] uppercase text-site-text/40">
           <div>© {new Date().getFullYear()} Izumi</div>
           <div>Tokyo / Global</div>
         </div>
@@ -2506,7 +2506,7 @@ export default function App() {
                       <input
                         type="text"
                         required
-                        className="w-full bg-transparent border-b border-border focus:border-accent outline-none py-2 text-sm transition-colors duration-300"
+                        className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300"
                         placeholder="Your Name / Organization"
                       />
                     </div>
@@ -2517,7 +2517,7 @@ export default function App() {
                       <input
                         type="email"
                         required
-                        className="w-full bg-transparent border-b border-border focus:border-accent outline-none py-2 text-sm transition-colors duration-300"
+                        className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300"
                         placeholder="Email Address"
                       />
                     </div>
