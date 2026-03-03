@@ -222,7 +222,7 @@ const AudioVisualizer = ({ isSoundEnabled }: { isSoundEnabled: boolean }) => {
 const SyndicateSVG = () => (
   <svg
     viewBox="0 0 400 200"
-    className="w-full h-full stroke-accent fill-none"
+    className="w-full h-full stroke-site-accent fill-none"
     strokeWidth="1"
   >
     <motion.path
@@ -238,7 +238,7 @@ const SyndicateSVG = () => (
       cx="50"
       cy="100"
       r="4"
-      className="fill-accent"
+      className="fill-site-accent"
     />
     <motion.circle
       initial={{ pathLength: 0, opacity: 0 }}
@@ -247,7 +247,7 @@ const SyndicateSVG = () => (
       cx="150"
       cy="100"
       r="4"
-      className="fill-accent"
+      className="fill-site-accent"
     />
     <motion.circle
       initial={{ pathLength: 0, opacity: 0 }}
@@ -256,7 +256,7 @@ const SyndicateSVG = () => (
       cx="200"
       cy="50"
       r="4"
-      className="fill-accent"
+      className="fill-site-accent"
     />
     <motion.circle
       initial={{ pathLength: 0, opacity: 0 }}
@@ -265,7 +265,7 @@ const SyndicateSVG = () => (
       cx="250"
       cy="150"
       r="4"
-      className="fill-accent"
+      className="fill-site-accent"
     />
     <motion.circle
       initial={{ pathLength: 0, opacity: 0 }}
@@ -274,7 +274,7 @@ const SyndicateSVG = () => (
       cx="300"
       cy="100"
       r="4"
-      className="fill-accent"
+      className="fill-site-accent"
     />
     <motion.circle
       initial={{ pathLength: 0, opacity: 0 }}
@@ -283,7 +283,7 @@ const SyndicateSVG = () => (
       cx="350"
       cy="100"
       r="4"
-      className="fill-accent"
+      className="fill-site-accent"
     />
     <motion.path
       initial={{ pathLength: 0 }}
@@ -305,7 +305,7 @@ const SyndicateSVG = () => (
 const AuraSVG = () => (
   <svg
     viewBox="0 0 400 200"
-    className="w-full h-full stroke-accent fill-none"
+    className="w-full h-full stroke-site-accent fill-none"
     strokeWidth="1"
   >
     {[40, 80, 120, 160].map((y, i) => (
@@ -317,7 +317,7 @@ const AuraSVG = () => (
         cx="50"
         cy={y}
         r="4"
-        className="fill-accent"
+        className="fill-site-accent"
       />
     ))}
     {[60, 100, 140].map((y, i) => (
@@ -329,7 +329,7 @@ const AuraSVG = () => (
         cx="150"
         cy={y}
         r="4"
-        className="fill-accent"
+        className="fill-site-accent"
       />
     ))}
     {[60, 100, 140].map((y, i) => (
@@ -341,7 +341,7 @@ const AuraSVG = () => (
         cx="250"
         cy={y}
         r="4"
-        className="fill-accent"
+        className="fill-site-accent"
       />
     ))}
     {[80, 120].map((y, i) => (
@@ -353,7 +353,7 @@ const AuraSVG = () => (
         cx="350"
         cy={y}
         r="4"
-        className="fill-accent"
+        className="fill-site-accent"
       />
     ))}
     {[40, 80, 120, 160].map((y1, i) =>
@@ -395,7 +395,7 @@ const AuraSVG = () => (
 const NexusSVG = () => (
   <svg
     viewBox="0 0 400 200"
-    className="w-full h-full stroke-accent fill-none"
+    className="w-full h-full stroke-site-accent fill-none"
     strokeWidth="1"
   >
     {[
@@ -430,7 +430,7 @@ const NexusSVG = () => (
         cx={x}
         cy={y}
         r="2"
-        className="fill-accent"
+        className="fill-site-accent"
       />
     ))}
     <motion.path
@@ -491,7 +491,7 @@ const NexusSVG = () => (
 const ChronosSVG = () => (
   <svg
     viewBox="0 0 400 200"
-    className="w-full h-full stroke-accent fill-none"
+    className="w-full h-full stroke-site-accent fill-none"
     strokeWidth="1"
   >
     <motion.path
@@ -545,7 +545,7 @@ const ChronosSVG = () => (
 const IgnisSVG = () => (
   <svg
     viewBox="0 0 100 100"
-    className="w-full h-full stroke-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
+    className="w-full h-full stroke-site-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
     strokeWidth="1"
   >
     {[...Array(8)].map((_, i) => (
@@ -566,7 +566,7 @@ const IgnisSVG = () => (
         }}
       />
     ))}
-    <circle cx="50" cy="50" r="4" className="fill-accent" />
+    <circle cx="50" cy="50" r="4" className="fill-site-accent" />
   </svg>
 );
 
@@ -660,7 +660,7 @@ const projects = [
 const TerraSVG = () => (
   <svg
     viewBox="0 0 100 100"
-    className="w-full h-full stroke-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
+    className="w-full h-full stroke-site-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
     strokeWidth="1"
   >
     <motion.rect
@@ -700,7 +700,7 @@ const TerraSVG = () => (
 const AquaSVG = () => (
   <svg
     viewBox="0 0 100 100"
-    className="w-full h-full stroke-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
+    className="w-full h-full stroke-site-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
     strokeWidth="1"
   >
     {[...Array(3)].map((_, i) => (
@@ -728,7 +728,7 @@ const AquaSVG = () => (
 const AetherSVG = () => (
   <svg
     viewBox="0 0 100 100"
-    className="w-full h-full stroke-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
+    className="w-full h-full stroke-site-accent fill-none absolute inset-0 opacity-10 group-hover:opacity-100 transition-opacity duration-500"
     strokeWidth="1"
   >
     <motion.circle
@@ -748,7 +748,7 @@ const AetherSVG = () => (
       cx="50"
       cy="50"
       r="5"
-      className="fill-accent"
+      className="fill-site-accent"
       variants={{
         initial: { scale: 1 },
         hover: {
@@ -1242,12 +1242,12 @@ export default function App() {
             className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[600px] bg-bg/90 backdrop-blur-xl border border-border rounded-lg shadow-2xl z-[100] font-mono text-xs p-6 overflow-hidden"
           >
             <div className="flex justify-between items-center mb-4 border-b border-border pb-2">
-              <span className="text-accent tracking-widest uppercase">
+              <span className="text-site-accent tracking-widest uppercase">
                 Izumi Terminal
               </span>
               <button
                 onClick={() => setIsTerminalOpen(false)}
-                className="opacity-50 hover:opacity-100 hover:text-accent"
+                className="opacity-50 hover:opacity-100 hover:text-site-accent"
                 onMouseEnter={handleHover}
               >
                 [CLOSE]
@@ -1258,7 +1258,7 @@ export default function App() {
                 <div
                   key={i}
                   className={
-                    line.startsWith(">") ? "opacity-50" : "text-accent"
+                    line.startsWith(">") ? "opacity-50" : "text-site-accent"
                   }
                 >
                   {line}
@@ -1270,7 +1270,7 @@ export default function App() {
               onSubmit={handleTerminalSubmit}
               className="flex items-center gap-2"
             >
-              <span className="text-accent">{">"}</span>
+              <span className="text-site-accent">{">"}</span>
               <input
                 ref={terminalInputRef}
                 type="text"
@@ -1288,7 +1288,7 @@ export default function App() {
       {/* Custom Cursor */}
       {isDesktop && !isA11yMode && (
         <motion.div
-          className="fixed top-0 left-0 w-4 h-4 rounded-full border border-accent pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center"
+          className="fixed top-0 left-0 w-4 h-4 rounded-full border border-site-accent pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center"
           style={{ x: cursorX, y: cursorY }}
           animate={{
             scale: isHovering ? 2.5 : 1,
@@ -1315,7 +1315,7 @@ export default function App() {
         <a
           href="https://github.com/Izumitempest"
           target="_blank"
-          className="text-text/30 hover:text-accent transition-colors"
+          className="text-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
         >
@@ -1324,7 +1324,7 @@ export default function App() {
         <a
           href="https://linkedin.com/in/izumitempest"
           target="_blank"
-          className="text-text/30 hover:text-accent transition-colors"
+          className="text-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
         >
@@ -1332,7 +1332,7 @@ export default function App() {
         </a>
         <a
           href="mailto:izumi@example.com"
-          className="text-text/30 hover:text-accent transition-colors"
+          className="text-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
         >
@@ -1352,7 +1352,7 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 bg-bg border border-border flex items-center justify-center rounded-full hover:border-accent hover:text-accent transition-all z-40 group overflow-hidden"
+            className="fixed bottom-8 right-8 w-12 h-12 bg-bg border border-border flex items-center justify-center rounded-full hover:border-site-accent hover:text-site-accent transition-all z-40 group overflow-hidden"
             onMouseEnter={handleHover}
           >
             <motion.div className="absolute inset-0 bg-accent/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -1374,7 +1374,7 @@ export default function App() {
                 setIsTerminalOpen(!isTerminalOpen);
               }}
               onMouseEnter={handleHover}
-              className="hover:text-accent transition-colors duration-500"
+              className="hover:text-site-accent transition-colors duration-500"
               data-cursor="hover"
               aria-label="Toggle Terminal"
             >
@@ -1384,7 +1384,7 @@ export default function App() {
               <button
                 onClick={() => setIsPlaylistOpen(!isPlaylistOpen)}
                 onMouseEnter={handleHover}
-                className={`hover:text-accent transition-colors duration-500 mr-4 ${isPlaylistOpen ? "text-accent" : ""}`}
+                className={`hover:text-site-accent transition-colors duration-500 mr-4 ${isPlaylistOpen ? "text-site-accent" : ""}`}
                 data-cursor="hover"
                 aria-label="Toggle Playlist"
               >
@@ -1393,7 +1393,7 @@ export default function App() {
               <button
                 onClick={toggleSound}
                 onMouseEnter={handleHover}
-                className={`hover:text-accent transition-colors duration-500 ${isSoundEnabled ? "text-accent" : ""}`}
+                className={`hover:text-site-accent transition-colors duration-500 ${isSoundEnabled ? "text-site-accent" : ""}`}
                 data-cursor="hover"
                 aria-label="Toggle Sound"
               >
@@ -1414,19 +1414,19 @@ export default function App() {
                     className="absolute top-full right-0 mt-4 w-72 bg-site-bg/95 backdrop-blur-xl border border-site-border p-4 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-4 text-site-text"
                   >
                     <div className="flex justify-between items-center border-b border-border pb-2">
-                      <span className="text-xs tracking-[0.2em] uppercase text-accent">
+                      <span className="text-xs tracking-[0.2em] uppercase text-site-accent">
                         Audio Synthesis
                       </span>
                       <div className="flex gap-2">
                         <button
                           onClick={() => setIsShuffle(!isShuffle)}
-                          className={`hover:text-accent transition-colors ${isShuffle ? "text-accent" : "opacity-50"}`}
+                          className={`hover:text-site-accent transition-colors ${isShuffle ? "text-site-accent" : "opacity-50"}`}
                         >
                           <Shuffle size={14} />
                         </button>
                         <button
                           onClick={handleNextTrack}
-                          className="hover:text-accent transition-colors opacity-50 hover:opacity-100"
+                          className="hover:text-site-accent transition-colors opacity-50 hover:opacity-100"
                         >
                           <SkipForward size={14} />
                         </button>
@@ -1508,7 +1508,7 @@ export default function App() {
                   setIsThemeMenuOpen(!isThemeMenuOpen);
                 }}
                 onMouseEnter={handleHover}
-                className={`hover:text-accent transition-colors duration-500 ${isThemeMenuOpen ? "text-accent" : ""}`}
+                className={`hover:text-site-accent transition-colors duration-500 ${isThemeMenuOpen ? "text-site-accent" : ""}`}
                 data-cursor="hover"
                 aria-label="Toggle Theme Menu"
               >
@@ -1548,7 +1548,7 @@ export default function App() {
                 setIsA11yMode(!isA11yMode);
               }}
               onMouseEnter={handleHover}
-              className={`hover:text-accent transition-colors duration-500 ${isA11yMode ? "text-accent" : ""}`}
+              className={`hover:text-site-accent transition-colors duration-500 ${isA11yMode ? "text-site-accent" : ""}`}
               data-cursor="hover"
               aria-label="Toggle Accessibility Mode"
             >
@@ -1560,7 +1560,7 @@ export default function App() {
               href="#work"
               onMouseEnter={handleHover}
               onClick={(e) => handleNavClick(e, "work")}
-              className="hover:text-accent transition-colors duration-500"
+              className="hover:text-site-accent transition-colors duration-500"
               data-cursor="hover"
             >
               Work
@@ -1569,7 +1569,7 @@ export default function App() {
               href="#contact"
               onMouseEnter={handleHover}
               onClick={(e) => handleNavClick(e, "contact")}
-              className="hover:text-accent transition-colors duration-500"
+              className="hover:text-site-accent transition-colors duration-500"
               data-cursor="hover"
             >
               Contact
@@ -1587,13 +1587,13 @@ export default function App() {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col"
           >
-            <p className="font-serif italic text-accent text-xl md:text-3xl mb-6 transition-all duration-700 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            <p className="font-serif italic text-site-accent text-xl md:text-3xl mb-6 transition-all duration-700 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               Precision Python Engineering
             </p>
             <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-site-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
               Izumi
             </h1>
-            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-12 md:ml-32 hover:text-accent transition-all duration-700 cursor-default">
+            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-12 md:ml-32 hover:text-site-accent transition-all duration-700 cursor-default">
               Architect
             </h1>
           </motion.div>
@@ -1619,7 +1619,7 @@ export default function App() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.15 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] border border-accent rounded-full blur-3xl -z-10 transition-colors duration-500"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] border border-site-accent rounded-full blur-3xl -z-10 transition-colors duration-500"
         />
       </section>
 
@@ -1628,11 +1628,11 @@ export default function App() {
         {/* Parallax Background Elements */}
         <motion.div
           style={{ y: isA11yMode ? 0 : parallax1 }}
-          className="absolute top-20 left-10 w-64 h-64 border border-accent/10 rounded-full -z-10"
+          className="absolute top-20 left-10 w-64 h-64 border border-site-accent/10 rounded-full -z-10"
         />
         <motion.div
           style={{ y: isA11yMode ? 0 : parallax2 }}
-          className="absolute bottom-20 right-10 w-96 h-96 border border-accent/5 rounded-full -z-10"
+          className="absolute bottom-20 right-10 w-96 h-96 border border-site-accent/5 rounded-full -z-10"
         />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 relative z-10">
@@ -1642,12 +1642,12 @@ export default function App() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-12 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-12 transition-colors duration-500">
               01 / The Journey
             </h2>
             <h3 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-8">
               "Software is not merely written; it is{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 sculpted
               </span>
               ."
@@ -1684,7 +1684,7 @@ export default function App() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-12 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-12 transition-colors duration-500">
               02 / The Ritual
             </h2>
             <div
@@ -1693,7 +1693,7 @@ export default function App() {
               onMouseEnter={handleHover}
             >
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-site-accent to-transparent opacity-50"></div>
-              <h4 className="font-serif text-2xl mb-6 text-accent transition-colors duration-500">
+              <h4 className="font-serif text-2xl mb-6 text-site-accent transition-colors duration-500">
                 The White Room
               </h4>
               <p className="text-sm font-light leading-relaxed opacity-80 mb-8">
@@ -1708,7 +1708,7 @@ export default function App() {
                 <code className="block opacity-50"> # Vault Access: 0x1A4</code>
                 <code className="block"> return Model.synthesize(vision)</code>
               </pre>
-              <div className="flex items-center gap-4 text-[10px] tracking-[0.2em] uppercase text-accent transition-colors duration-500">
+              <div className="flex items-center gap-4 text-[10px] tracking-[0.2em] uppercase text-site-accent transition-colors duration-500">
                 <span className="w-8 h-[1px] bg-site-accent transition-colors duration-500"></span>
                 Concept Before Syntax
               </div>
@@ -1723,7 +1723,7 @@ export default function App() {
           <div className="flex justify-center mb-16">
             <Quote
               size={32}
-              className="text-accent opacity-50 transition-colors duration-500"
+              className="text-site-accent opacity-50 transition-colors duration-500"
               strokeWidth={1}
             />
           </div>
@@ -1741,7 +1741,7 @@ export default function App() {
                   "{t.quote}"
                 </p>
                 <div className="text-[10px] tracking-[0.2em] uppercase">
-                  <span className="text-accent transition-colors duration-500">
+                  <span className="text-site-accent transition-colors duration-500">
                     {t.author}
                   </span>
                   <span className="opacity-50 mx-2">|</span>
@@ -1758,21 +1758,21 @@ export default function App() {
         {/* Parallax Background Elements */}
         <motion.div
           style={{ y: isA11yMode ? 0 : parallax3 }}
-          className="absolute top-1/3 right-1/4 w-48 h-48 border border-accent/10 rotate-45 -z-10"
+          className="absolute top-1/3 right-1/4 w-48 h-48 border border-site-accent/10 rotate-45 -z-10"
         />
         <motion.div
           style={{ y: isA11yMode ? 0 : parallax1 }}
-          className="absolute bottom-1/4 left-10 w-72 h-72 border border-accent/5 rounded-full -z-10"
+          className="absolute bottom-1/4 left-10 w-72 h-72 border border-site-accent/5 rounded-full -z-10"
         />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-6 transition-colors duration-500">
               03 / The Arsenal
             </h2>
             <h3 className="font-serif text-4xl md:text-6xl font-light">
               A METAPHORICAL{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 MASTERY
               </span>
             </h3>
@@ -1783,9 +1783,9 @@ export default function App() {
               <motion.div
                 key={el.id}
                 initial="initial"
-                whileInView="initial"
+                whileInView="animate"
                 whileHover="hover"
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 onMouseEnter={handleHover}
                 className="relative h-[400px] border border-site-border p-8 flex flex-col justify-between group overflow-hidden transition-colors duration-500"
                 data-cursor="hover"
@@ -1801,7 +1801,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-site-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
 
                 <div className="relative z-10">
-                  <span className="font-serif italic text-accent text-3xl transition-colors duration-500">
+                  <span className="font-serif italic text-site-accent text-3xl transition-colors duration-500">
                     {el.id}
                   </span>
                   <h4 className="text-xs tracking-[0.2em] uppercase mt-6">
@@ -1810,7 +1810,7 @@ export default function App() {
                 </div>
 
                 <div className="relative z-10">
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-site-accent mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                     {el.concept}
                   </p>
                   <p className="text-sm font-light leading-relaxed opacity-50 group-hover:opacity-90 transition-opacity duration-500 delay-200">
@@ -1827,12 +1827,12 @@ export default function App() {
       <section className="py-32 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-6 transition-colors duration-500">
               04 / The Stack
             </h2>
             <h3 className="font-serif text-4xl md:text-6xl font-light">
               TECHNICAL{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 FOUNDATION
               </span>
             </h3>
@@ -1872,12 +1872,12 @@ export default function App() {
       <section className="py-32 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-6 transition-colors duration-500">
               05 / Performance Metrics
             </h2>
             <h3 className="font-serif text-4xl md:text-6xl font-light">
               EMPIRICAL{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 EVIDENCE
               </span>
             </h3>
@@ -1928,14 +1928,14 @@ export default function App() {
                     <XAxis
                       dataKey="month"
                       stroke="var(--theme-text)"
-                      opacity={0.5}
+                      opacity={1}
                       fontSize={10}
                       tickLine={false}
                       axisLine={false}
                     />
                     <YAxis
                       stroke="var(--theme-text)"
-                      opacity={0.5}
+                      opacity={1}
                       fontSize={10}
                       tickLine={false}
                       axisLine={false}
@@ -1986,7 +1986,7 @@ export default function App() {
                     <XAxis
                       dataKey="month"
                       stroke="var(--theme-text)"
-                      opacity={0.5}
+                      opacity={1}
                       fontSize={10}
                       tickLine={false}
                       axisLine={false}
@@ -1994,7 +1994,7 @@ export default function App() {
                     <YAxis
                       domain={[80, 100]}
                       stroke="var(--theme-text)"
-                      opacity={0.5}
+                      opacity={1}
                       fontSize={10}
                       tickLine={false}
                       axisLine={false}
@@ -2033,12 +2033,12 @@ export default function App() {
       <section className="py-32 md:py-48 px-6 md:px-12 border-t border-site-border relative z-10 bg-site-bg transition-colors duration-500 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-6 transition-colors duration-500">
               06 / The Laboratory
             </h2>
             <h3 className="font-serif text-4xl md:text-6xl font-light">
               INTERACTIVE{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 SYNTHESIS
               </span>
             </h3>
@@ -2112,12 +2112,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-24">
             <div>
-              <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
+              <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-6 transition-colors duration-500">
                 07 / Selected Works
               </h2>
               <h3 className="font-serif text-4xl md:text-6xl font-light">
                 ARCHITECTURAL{" "}
-                <span className="italic text-accent transition-colors duration-500">
+                <span className="italic text-site-accent transition-colors duration-500">
                   EXHIBITION
                 </span>
               </h3>
@@ -2149,11 +2149,11 @@ export default function App() {
                     data-cursor="hover"
                   >
                     <div className="flex items-start md:items-center gap-8 md:gap-16">
-                      <span className="font-serif italic text-accent text-xl opacity-50 group-hover:opacity-100 transition-all duration-500">
+                      <span className="font-serif italic text-site-accent text-xl opacity-50 group-hover:opacity-100 transition-all duration-500">
                         {project.id}
                       </span>
                       <div>
-                        <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light group-hover:text-accent transition-colors duration-500">
+                        <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light group-hover:text-site-accent transition-colors duration-500">
                           {project.title}
                         </h3>
                         <p className="text-[10px] tracking-[0.2em] uppercase mt-4 opacity-50">
@@ -2183,7 +2183,7 @@ export default function App() {
                         <div className="pb-16 grid grid-cols-1 lg:grid-cols-12 gap-12 pt-8">
                           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div>
-                              <h4 className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 flex items-center gap-2 transition-colors duration-500">
+                              <h4 className="text-[10px] tracking-[0.2em] uppercase text-site-accent mb-4 flex items-center gap-2 transition-colors duration-500">
                                 <span className="w-4 h-[1px] bg-site-accent transition-colors duration-500"></span>{" "}
                                 The Problem
                               </h4>
@@ -2192,7 +2192,7 @@ export default function App() {
                               </p>
                             </div>
                             <div>
-                              <h4 className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 flex items-center gap-2 transition-colors duration-500">
+                              <h4 className="text-[10px] tracking-[0.2em] uppercase text-site-accent mb-4 flex items-center gap-2 transition-colors duration-500">
                                 <span className="w-4 h-[1px] bg-site-accent transition-colors duration-500"></span>{" "}
                                 The Solution
                               </h4>
@@ -2201,7 +2201,7 @@ export default function App() {
                               </p>
                             </div>
                             <div className="md:col-span-2">
-                              <h4 className="text-[10px] tracking-[0.2em] uppercase text-accent mb-4 flex items-center gap-2 transition-colors duration-500">
+                              <h4 className="text-[10px] tracking-[0.2em] uppercase text-site-accent mb-4 flex items-center gap-2 transition-colors duration-500">
                                 <span className="w-4 h-[1px] bg-site-accent transition-colors duration-500"></span>{" "}
                                 Contribution
                               </h4>
@@ -2213,7 +2213,7 @@ export default function App() {
 
                           {/* SVG Architecture Draw-Down */}
                           <div className="lg:col-span-5 h-64 border border-site-border bg-site-card rounded-lg p-6 relative overflow-hidden flex items-center justify-center">
-                            <div className="absolute top-4 left-4 text-[10px] tracking-[0.2em] uppercase text-accent opacity-50">
+                            <div className="absolute top-4 left-4 text-[10px] tracking-[0.2em] uppercase text-site-accent opacity-50">
                               Architecture Topology
                             </div>
                             <project.Diagram />
@@ -2235,12 +2235,12 @@ export default function App() {
       >
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-16">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-6 transition-colors duration-500">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-6 transition-colors duration-500">
               08 / Restricted Access
             </h2>
             <h3 className="font-serif text-4xl md:text-6xl font-light">
               THE{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 VAULT
               </span>
             </h3>
@@ -2255,11 +2255,11 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-8"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 border border-accent rounded-full text-accent mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 border border-site-accent rounded-full text-site-accent mb-4">
                   <Unlock size={24} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-2xl text-accent mb-4 transition-colors duration-500">
+                  <h4 className="font-serif text-2xl text-site-accent mb-4 transition-colors duration-500">
                     Classified Access Granted
                   </h4>
                   <p className="text-sm font-light opacity-70 max-w-md mx-auto">
@@ -2373,7 +2373,7 @@ export default function App() {
         className="py-32 md:py-48 px-6 md:px-12 border-t border-site-border relative overflow-hidden z-10 bg-site-bg transition-colors duration-500"
       >
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-12 transition-colors duration-500">
+          <h2 className="text-xs tracking-[0.3em] uppercase text-site-accent mb-12 transition-colors duration-500">
             08 / Engage
           </h2>
 
@@ -2388,7 +2388,7 @@ export default function App() {
           >
             <h3 className="font-serif text-4xl md:text-7xl lg:text-[8rem] leading-[0.9] font-light mb-12 relative inline-block text-left md:text-center">
               REQUEST A <br />{" "}
-              <span className="italic text-accent transition-colors duration-500">
+              <span className="italic text-site-accent transition-colors duration-500">
                 CONSULTATION
               </span>
               {/* Glowing Underline Effect */}
@@ -2446,7 +2446,7 @@ export default function App() {
 
         <div className="absolute bottom-0 left-0 w-full p-6 flex justify-between items-end text-[10px] tracking-[0.2em] uppercase text-site-text/40">
           <div>© {new Date().getFullYear()} Izumi</div>
-          <div>Tokyo / Global</div>
+          <div>Global</div>
         </div>
       </section>
 
@@ -2474,7 +2474,7 @@ export default function App() {
                     <h2 className="font-serif text-3xl md:text-4xl font-light mb-2">
                       Initiate Dialogue
                     </h2>
-                    <p className="text-sm tracking-[0.1em] uppercase font-light opacity-70 text-accent">
+                    <p className="text-sm tracking-[0.1em] uppercase font-light opacity-70 text-site-accent">
                       Confidential Inquiry
                     </p>
                   </div>
@@ -2483,7 +2483,7 @@ export default function App() {
                       handleClick();
                       setIsConsultationOpen(false);
                     }}
-                    className="p-2 hover:text-accent transition-colors"
+                    className="p-2 hover:text-site-accent transition-colors"
                     aria-label="Close modal"
                   >
                     <X size={24} strokeWidth={1} />
