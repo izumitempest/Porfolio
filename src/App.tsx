@@ -1165,6 +1165,27 @@ export default function App() {
   const [isDesktop, setIsDesktop] = useState(true);
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [consultationIdentity, setConsultationIdentity] = useState("");
+  const [consultationContact, setConsultationContact] = useState("");
+  const [consultationNature, setConsultationNature] = useState("architecture");
+  const [consultationDetails, setConsultationDetails] = useState("");
+
+  const handleConsultationSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(
+      `[Portfolio Inquiry] ${consultationNature}`,
+    );
+    const body = encodeURIComponent(
+      `Identity: ${consultationIdentity}\nContact: ${consultationContact}\nInquiry Nature: ${consultationNature}\n\nProject Details:\n${consultationDetails}`,
+    );
+    window.location.href = `mailto:izumi@example.com?subject=${subject}&body=${body}`;
+    setIsConsultationOpen(false);
+    // Reset form
+    setConsultationIdentity("");
+    setConsultationContact("");
+    setConsultationNature("architecture");
+    setConsultationDetails("");
+  };
 
   useEffect(() => {
     setIsDesktop(window.matchMedia("(pointer: fine)").matches);
@@ -2490,13 +2511,7 @@ export default function App() {
                   </button>
                 </div>
 
-                <form
-                  className="space-y-8"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setIsConsultationOpen(false);
-                  }}
-                >
+                <form className="space-y-8" onSubmit={handleConsultationSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-site-text">
                     <div className="space-y-2">
                       <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block text-site-text">
@@ -2505,6 +2520,10 @@ export default function App() {
                       <input
                         type="text"
                         required
+                        value={consultationIdentity}
+                        onChange={(e) =>
+                          setConsultationIdentity(e.target.value)
+                        }
                         className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300"
                         placeholder="Your Name / Organization"
                       />
@@ -2516,6 +2535,8 @@ export default function App() {
                       <input
                         type="email"
                         required
+                        value={consultationContact}
+                        onChange={(e) => setConsultationContact(e.target.value)}
                         className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300"
                         placeholder="Email Address"
                       />
@@ -2526,7 +2547,11 @@ export default function App() {
                     <label className="text-[10px] tracking-[0.2em] uppercase opacity-70 block">
                       Nature of Inquiry
                     </label>
-                    <select className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300 appearance-none">
+                    <select
+                      value={consultationNature}
+                      onChange={(e) => setConsultationNature(e.target.value)}
+                      className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300 appearance-none"
+                    >
                       <option
                         value="architecture"
                         className="bg-site-bg text-site-text"
@@ -2561,6 +2586,8 @@ export default function App() {
                     <textarea
                       required
                       rows={4}
+                      value={consultationDetails}
+                      onChange={(e) => setConsultationDetails(e.target.value)}
                       className="w-full bg-transparent border-b border-site-border focus:border-site-accent outline-none py-2 text-sm transition-colors duration-300 resize-none"
                       placeholder="Briefly describe the scope and objectives..."
                     ></textarea>
