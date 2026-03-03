@@ -1249,7 +1249,7 @@ export default function App() {
 
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 h-1 bg-accent z-50 origin-left"
+        className="fixed top-0 left-0 h-1 bg-site-accent z-50 origin-left"
         style={{ scaleX: scrollYProgress, width: "100%" }}
       />
 
@@ -1260,9 +1260,9 @@ export default function App() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[600px] bg-bg/90 backdrop-blur-xl border border-border rounded-lg shadow-2xl z-[100] font-mono text-xs p-6 overflow-hidden"
+            className="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[600px] bg-site-bg/90 backdrop-blur-xl border border-site-border rounded-lg shadow-2xl z-[100] font-mono text-xs p-4 md:p-6 overflow-hidden"
           >
-            <div className="flex justify-between items-center mb-4 border-b border-border pb-2">
+            <div className="flex justify-between items-center mb-4 border-b border-site-border pb-2">
               <span className="text-site-accent tracking-widest uppercase">
                 Izumi Terminal
               </span>
@@ -1297,7 +1297,7 @@ export default function App() {
                 type="text"
                 value={terminalInput}
                 onChange={(e) => setTerminalInput(e.target.value)}
-                className="bg-transparent border-none outline-none w-full text-text"
+                className="bg-transparent border-none outline-none w-full text-site-text"
                 spellCheck={false}
                 autoComplete="off"
               />
@@ -1320,7 +1320,7 @@ export default function App() {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="w-1 h-1 bg-accent rounded-full"
+            className="w-1 h-1 bg-site-accent rounded-full"
             animate={{ opacity: isHovering ? 0 : 1 }}
           />
         </motion.div>
@@ -1336,7 +1336,7 @@ export default function App() {
         <a
           href="https://github.com/Izumitempest"
           target="_blank"
-          className="text-text/30 hover:text-site-accent transition-colors"
+          className="text-site-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
         >
@@ -1345,7 +1345,7 @@ export default function App() {
         <a
           href="https://linkedin.com/in/izumitempest"
           target="_blank"
-          className="text-text/30 hover:text-site-accent transition-colors"
+          className="text-site-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
         >
@@ -1353,13 +1353,13 @@ export default function App() {
         </a>
         <a
           href="mailto:lilice308@gmail.com"
-          className="text-text/30 hover:text-site-accent transition-colors"
+          className="text-site-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
         >
           <Mail size={18} />
         </a>
-        <div className="w-[1px] h-20 bg-border mx-auto"></div>
+        <div className="w-[1px] h-20 bg-site-border mx-auto"></div>
         <span className="text-[10px] vertical-text tracking-widest uppercase opacity-30 select-none">
           Connect
         </span>
@@ -1373,22 +1373,22 @@ export default function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 w-12 h-12 bg-bg border border-border flex items-center justify-center rounded-full hover:border-site-accent hover:text-site-accent transition-all z-40 group overflow-hidden"
+            className="fixed bottom-6 right-6 md:bottom-8 md:right-8 w-10 h-10 md:w-12 md:h-12 bg-site-bg border border-site-border flex items-center justify-center rounded-full hover:border-site-accent hover:text-site-accent transition-all z-40 group overflow-hidden"
             onMouseEnter={handleHover}
           >
-            <motion.div className="absolute inset-0 bg-accent/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            <motion.div className="absolute inset-0 bg-site-accent/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             <ArrowUp size={20} className="relative z-10" />
           </motion.button>
         )}
       </AnimatePresence>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 bg-site-bg/95 backdrop-blur-xl border-b border-site-border/50 transition-all duration-700 ease-in-out shadow-sm text-site-text">
+      <nav className="fixed top-0 left-0 w-full px-4 py-3 md:p-12 flex justify-between items-center z-50 bg-site-bg/95 backdrop-blur-xl border-b border-site-border/50 transition-all duration-700 ease-in-out shadow-sm text-site-text">
         <div className="text-sm tracking-[0.2em] uppercase font-light">
           Izumi
         </div>
         <div className="flex items-center gap-6 md:gap-8">
-          <div className="flex items-center gap-4 border-r border-border pr-6 md:pr-8">
+          <div className="relative flex items-center gap-3 md:gap-4 border-r border-site-border pr-4 md:pr-8">
             <button
               onClick={() => {
                 handleClick();
@@ -1434,7 +1434,7 @@ export default function App() {
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     className="absolute top-full right-0 mt-4 w-72 bg-site-bg/95 backdrop-blur-xl border border-site-border p-4 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-[60] flex flex-col gap-4 text-site-text"
                   >
-                    <div className="flex justify-between items-center border-b border-border pb-2">
+                    <div className="flex justify-between items-center border-b border-site-border pb-2">
                       <span className="text-xs tracking-[0.2em] uppercase text-site-accent">
                         Audio Synthesis
                       </span>
@@ -1576,7 +1576,7 @@ export default function App() {
               <Eye size={16} />
             </button>
           </div>
-          <div className="text-sm tracking-[0.2em] uppercase font-light flex gap-6 md:gap-8">
+          <div className="text-sm tracking-[0.2em] uppercase font-light hidden md:flex gap-6 md:gap-8">
             <a
               href="#work"
               onMouseEnter={handleHover}
@@ -1611,10 +1611,10 @@ export default function App() {
             <p className="font-serif italic text-site-accent text-xl md:text-3xl mb-6 transition-all duration-700 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               Precision Python Engineering
             </p>
-            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-site-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
+            <h1 className="font-serif text-[13vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-site-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.3)]">
               Izumi
             </h1>
-            <h1 className="font-serif text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-12 md:ml-32 hover:text-site-accent transition-all duration-700 cursor-default">
+            <h1 className="font-serif text-[13vw] md:text-[12vw] leading-[0.8] tracking-tighter uppercase font-light text-outline ml-4 md:ml-32 hover:text-site-accent transition-all duration-700 cursor-default">
               Architect
             </h1>
           </motion.div>
@@ -1904,18 +1904,18 @@ export default function App() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="border border-site-border p-8 bg-site-card rounded-xl transition-colors duration-500"
+              className="border border-site-border p-4 md:p-8 bg-site-card rounded-xl transition-colors duration-500 overflow-hidden"
             >
               <h4 className="text-xs tracking-[0.2em] uppercase mb-8 opacity-70">
                 Latency Optimization (μs)
               </h4>
-              <div className="h-[300px] w-full">
+              <div className="h-[250px] md:h-[300px] w-full overflow-hidden">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart
                     data={performanceData}
@@ -1988,12 +1988,12 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="border border-site-border p-8 bg-site-card rounded-xl transition-colors duration-500"
+              className="border border-site-border p-4 md:p-8 bg-site-card rounded-xl transition-colors duration-500 overflow-hidden"
             >
               <h4 className="text-xs tracking-[0.2em] uppercase mb-8 opacity-70">
                 Model Accuracy (%)
               </h4>
-              <div className="h-[300px] w-full">
+              <div className="h-[250px] md:h-[300px] w-full overflow-hidden">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={performanceData}
@@ -2090,9 +2090,9 @@ export default function App() {
             <div className="lg:col-span-8 border border-site-border bg-site-card rounded-lg overflow-hidden flex flex-col">
               <div className="flex justify-between items-center p-4 border-b border-site-border bg-site-bg/50">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-border"></div>
-                  <div className="w-3 h-3 rounded-full bg-border"></div>
-                  <div className="w-3 h-3 rounded-full bg-border"></div>
+                  <div className="w-3 h-3 rounded-full bg-site-border"></div>
+                  <div className="w-3 h-3 rounded-full bg-site-border"></div>
+                  <div className="w-3 h-3 rounded-full bg-site-border"></div>
                 </div>
                 <button
                   onClick={runSnippet}
