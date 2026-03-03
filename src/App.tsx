@@ -1178,7 +1178,7 @@ export default function App() {
     const body = encodeURIComponent(
       `Identity: ${consultationIdentity}\nContact: ${consultationContact}\nInquiry Nature: ${consultationNature}\n\nProject Details:\n${consultationDetails}`,
     );
-    window.location.href = `mailto:izumi@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:lilice308@gmail.com?subject=${subject}&body=${body}`;
     setIsConsultationOpen(false);
     // Reset form
     setConsultationIdentity("");
@@ -1352,7 +1352,7 @@ export default function App() {
           <Linkedin size={18} />
         </a>
         <a
-          href="mailto:izumi@example.com"
+          href="mailto:lilice308@gmail.com"
           className="text-text/30 hover:text-site-accent transition-colors"
           onMouseEnter={handleHover}
           onClick={handleClick}
@@ -2311,7 +2311,7 @@ export default function App() {
                   </a>
 
                   <a
-                    href="mailto:izumi@example.com"
+                    href="mailto:lilice308@gmail.com"
                     className="flex items-center gap-4 p-5 border border-site-border hover:border-site-accent bg-site-bg/50 transition-all rounded-lg group"
                     onMouseEnter={handleHover}
                     onClick={handleClick}
